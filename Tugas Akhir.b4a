@@ -1,16 +1,18 @@
 ﻿Build1=Default,b4a.example
-File1=backgdounr_app.jpg
-File2=birth.bal
-File3=dashboard.bal
-File4=header circle.png
-File5=header_app.jpg
-File6=login.bal
+File1=add_birth.bal
+File2=backgdounr_app.jpg
+File3=birth.bal
+File4=dashboard.bal
+File5=header circle.png
+File6=header_app.jpg
+File7=login.bal
 FileGroup1=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
 FileGroup6=Default Group
+FileGroup7=Default Group
 Group=Default Group
 IconFile=
 Library1=core
@@ -20,9 +22,10 @@ ManifestCode='This code will be applied to the manifest file during compilation.
 Module1=Starter
 Module2=dashboard
 Module3=birth
-NumberOfFiles=6
+Module4=add_birth
+NumberOfFiles=7
 NumberOfLibraries=3
-NumberOfModules=3
+NumberOfModules=4
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 

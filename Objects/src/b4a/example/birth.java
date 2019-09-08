@@ -350,6 +350,7 @@ public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2serv
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.dashboard _dashboard = null;
+public b4a.example.add_birth _add_birth = null;
 public static class _rowcol{
 public boolean IsInitialized;
 public int Row;
@@ -662,6 +663,13 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("E
  //BA.debugLineNum = 202;BA.debugLine="Job.Release";
 _job._release();
  //BA.debugLineNum = 203;BA.debugLine="End Sub";
+return "";
+}
+public static String  _label7_click() throws Exception{
+ //BA.debugLineNum = 206;BA.debugLine="Sub Label7_Click";
+ //BA.debugLineNum = 207;BA.debugLine="StartActivity(\"add_birth\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("add_birth"));
+ //BA.debugLineNum = 208;BA.debugLine="End Sub";
 return "";
 }
 public static int  _numberofrows() throws Exception{

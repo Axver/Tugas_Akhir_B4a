@@ -207,3 +207,8 @@ Sub JobDone (Job As HttpJob)
 	End If
 	Job.Release
 End Sub
+
+
+Sub Label7_Click
+	StartActivity("add_birth")
+End Sub
