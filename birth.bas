@@ -7,6 +7,7 @@ Version=8.3
 #Region  Activity Attributes 
 	#FullScreen: True
 	#IncludeTitle: false
+	
 #End Region
 
 Sub Process_Globals
@@ -18,6 +19,9 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
+	Dim domain As String
+	Dim job2 As HttpJob
+	domain="http://eb52df92.ngrok.io/"
 	
 	Dim SV As ScrollView
 	Dim Header As Panel
@@ -31,12 +35,12 @@ Sub Globals
 	Dim SelectedRowColor As Int
 	
 	'Table settings
-	HeaderColor = Colors.Gray
+	HeaderColor = Colors.Red
 	NumberOfColumns = 4
 	RowHeight = 30dip
 	TableColor = Colors.White
 	FontColor = Colors.Black
-	HeaderFontColor = Colors.White
+	HeaderFontColor = Colors.Black
 	FontSize = 14
 	Alignment = Gravity.CENTER 'change to Gravity.LEFT or Gravity.RIGHT for other alignments.
 	SelectedRowColor = Colors.Blue
@@ -55,15 +59,18 @@ Sub Activity_Create(FirstTime As Boolean)
 	ColumnWidth = SV.Width / NumberOfColumns
 	SelectedRow = -1
 	'add header
-	SetHeader(Array As String("Col1", "Col2", "Col3", "Col4"))
+	SetHeader(Array As String("Id", "Reporter", "Type Of Birth", "Weight"))
+	job2.Initialize("Job2", Me)
+	job2.PostString(domain&"ta_v2/endpoint/birthData.php", "send=test" &"&data=test")
+	ProgressDialogShow("Loading...")
 	'add rows
-	For i = 1 To 100
-		AddRow(Array As String(i, "Some text", i * 2, "abc"))
-	Next
+	'For i = 1 To 100
+		'AddRow(Array As String(i, "Some text", i * 2, "abc"))
+	'Next
 	'set the value of a specific cell
-	SetCell(0, 3, "New value")
+	'SetCell(0, 3, "New value")
 	'get the value
-	Log("Cell (1, 2) value = " & GetCell(1, 2))
+	'Log("Cell (1, 2) value = " & GetCell(1, 2))
 
 End Sub
 
@@ -145,7 +152,7 @@ Sub SetHeader(Values() As String)
 		l.Tag = i
 		Header.AddView(l, ColumnWidth * i, 0, ColumnWidth, RowHeight)
 	Next
-	Activity.AddView(Header, SV.Left, SV.Top+200, SV.Width, RowHeight)
+	Activity.AddView(Header, SV.Left, SV.Top+100, SV.Width, RowHeight)
 End Sub
 Sub NumberOfRows As Int
 	Return Table.NumberOfViews / NumberOfColumns
@@ -163,4 +170,40 @@ Sub ClearAll
 	Next
 	Table.Height = 0
 	SelectedRow = -1
+End Sub
+
+Sub JobDone (Job As HttpJob)
+	
+	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
+	If Job.Success = True Then
+		
+		
+		Select Job.JobName
+			Case "Job2"
+				Dim parser As JSONParser
+				parser.Initialize(Job.GetString)
+				Dim root As Map = parser.NextObject
+				Dim features As List = root.Get("features")
+				
+				For Each colfeatures As Map In features
+					Dim properties As Map = colfeatures.Get("properties")
+					Dim citizen_id As String = properties.Get("citizen_id")
+					Dim no_kelahiran As String = properties.Get("no_kelahiran")
+					Dim type_of_birth As String = properties.Get("type_of_birth")
+					Dim weight As String = properties.Get("weight")
+					Dim nik_pelapor As String = properties.Get("nik_pelapor")
+					AddRow(Array As String(citizen_id, nik_pelapor, type_of_birth, weight))
+				
+					
+				Next
+   
+				ProgressDialogHide
+
+			
+		End Select
+	Else
+		Log("Error: " & Job.ErrorMessage)
+		ToastMessageShow("Error: " & Job.ErrorMessage, True)
+	End If
+	Job.Release
 End Sub
