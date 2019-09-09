@@ -329,6 +329,13 @@ public class family_card extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
+public static String _domain = "";
+public anywheresoftware.b4a.samples.httputils2.httpjob _job2 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _label10 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _label11 = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _edittext1 = null;
+public anywheresoftware.b4a.objects.ListViewWrapper _listview1 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _label12 = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
@@ -348,25 +355,172 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 20;BA.debugLine="Activity.LoadLayout(\"family_card\")";
+ //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 30;BA.debugLine="Activity.LoadLayout(\"family_card\")";
 mostCurrent._activity.LoadLayout("family_card",mostCurrent.activityBA);
- //BA.debugLineNum = 22;BA.debugLine="End Sub";
+ //BA.debugLineNum = 31;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+mostCurrent._job2._initialize(processBA,"Job2",family_card.getObject());
+ //BA.debugLineNum = 32;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
+mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countFcn.php","send=test"+"&data=test");
+ //BA.debugLineNum = 33;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 30;BA.debugLine="End Sub";
+ //BA.debugLineNum = 43;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 45;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
+ //BA.debugLineNum = 37;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 38;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+mostCurrent._job2._initialize(processBA,"Job2",family_card.getObject());
+ //BA.debugLineNum = 39;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
+mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countFcn.php","send=test"+"&data=test");
+ //BA.debugLineNum = 40;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
+ //BA.debugLineNum = 41;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button1_click() throws Exception{
+String _fc_number = "";
+ //BA.debugLineNum = 95;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 96;BA.debugLine="Dim fc_number As String";
+_fc_number = "";
+ //BA.debugLineNum = 97;BA.debugLine="fc_number=EditText1.Text";
+_fc_number = mostCurrent._edittext1.getText();
+ //BA.debugLineNum = 99;BA.debugLine="job2.Initialize(\"Job3\", Me)";
+mostCurrent._job2._initialize(processBA,"Job3",family_card.getObject());
+ //BA.debugLineNum = 100;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/fcn_search";
+mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/fcn_search.php","family_no="+_fc_number);
+ //BA.debugLineNum = 101;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
+ //BA.debugLineNum = 102;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+ //BA.debugLineNum = 16;BA.debugLine="Dim domain As String";
+mostCurrent._domain = "";
+ //BA.debugLineNum = 17;BA.debugLine="Dim job2 As HttpJob";
+mostCurrent._job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
+ //BA.debugLineNum = 19;BA.debugLine="domain=\"http://e0e5aadb.ngrok.io/\"";
+mostCurrent._domain = "http://e0e5aadb.ngrok.io/";
+ //BA.debugLineNum = 21;BA.debugLine="Private Label10 As Label";
+mostCurrent._label10 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="Private Label11 As Label";
+mostCurrent._label11 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 23;BA.debugLine="Private EditText1 As EditText";
+mostCurrent._edittext1 = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 24;BA.debugLine="Private ListView1 As ListView";
+mostCurrent._listview1 = new anywheresoftware.b4a.objects.ListViewWrapper();
+ //BA.debugLineNum = 25;BA.debugLine="Private Label12 As Label";
+mostCurrent._label12 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
+return "";
+}
+public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job) throws Exception{
+anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
+anywheresoftware.b4a.objects.collections.Map _root = null;
+anywheresoftware.b4a.objects.collections.List _features = null;
+anywheresoftware.b4a.objects.collections.Map _colfeatures = null;
+anywheresoftware.b4a.objects.collections.Map _properties = null;
+String _fcn = "";
+String _fcc = "";
+String _citizen_id = "";
+String _name = "";
+String _count = "";
+ //BA.debugLineNum = 47;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ //BA.debugLineNum = 49;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+anywheresoftware.b4a.keywords.Common.Log("JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success));
+ //BA.debugLineNum = 50;BA.debugLine="If Job.Success = True Then";
+if (_job._success==anywheresoftware.b4a.keywords.Common.True) { 
+ //BA.debugLineNum = 51;BA.debugLine="ProgressDialogHide";
+anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
+ //BA.debugLineNum = 52;BA.debugLine="Select Job.JobName";
+switch (BA.switchObjectToInt(_job._jobname,"Job2","Job3")) {
+case 0: {
+ //BA.debugLineNum = 54;BA.debugLine="Dim parser As JSONParser";
+_parser = new anywheresoftware.b4a.objects.collections.JSONParser();
+ //BA.debugLineNum = 55;BA.debugLine="parser.Initialize(Job.GetString)";
+_parser.Initialize(_job._getstring());
+ //BA.debugLineNum = 56;BA.debugLine="Dim root As Map = parser.NextObject";
+_root = new anywheresoftware.b4a.objects.collections.Map();
+_root = _parser.NextObject();
+ //BA.debugLineNum = 57;BA.debugLine="Dim features As List = root.Get(\"features\")";
+_features = new anywheresoftware.b4a.objects.collections.List();
+_features.setObject((java.util.List)(_root.Get((Object)("features"))));
+ //BA.debugLineNum = 58;BA.debugLine="For Each colfeatures As Map In features";
+_colfeatures = new anywheresoftware.b4a.objects.collections.Map();
+{
+final anywheresoftware.b4a.BA.IterableList group10 = _features;
+final int groupLen10 = group10.getSize()
+;int index10 = 0;
+;
+for (; index10 < groupLen10;index10++){
+_colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group10.Get(index10)));
+ //BA.debugLineNum = 59;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+_properties = new anywheresoftware.b4a.objects.collections.Map();
+_properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
+ //BA.debugLineNum = 60;BA.debugLine="Dim fcn As String = properties.Get(\"fcn\")";
+_fcn = BA.ObjectToString(_properties.Get((Object)("fcn")));
+ //BA.debugLineNum = 61;BA.debugLine="Dim fcc As String = properties.Get(\"fcc\")";
+_fcc = BA.ObjectToString(_properties.Get((Object)("fcc")));
+ //BA.debugLineNum = 63;BA.debugLine="Label10.Text=fcn";
+mostCurrent._label10.setText(BA.ObjectToCharSequence(_fcn));
+ //BA.debugLineNum = 64;BA.debugLine="Label11.Text=fcc";
+mostCurrent._label11.setText(BA.ObjectToCharSequence(_fcc));
+ }
+};
+ break; }
+case 1: {
+ //BA.debugLineNum = 67;BA.debugLine="Dim parser As JSONParser";
+_parser = new anywheresoftware.b4a.objects.collections.JSONParser();
+ //BA.debugLineNum = 68;BA.debugLine="parser.Initialize(Job.GetString)";
+_parser.Initialize(_job._getstring());
+ //BA.debugLineNum = 69;BA.debugLine="Dim root As Map = parser.NextObject";
+_root = new anywheresoftware.b4a.objects.collections.Map();
+_root = _parser.NextObject();
+ //BA.debugLineNum = 70;BA.debugLine="Dim features As List = root.Get(\"features\")";
+_features = new anywheresoftware.b4a.objects.collections.List();
+_features.setObject((java.util.List)(_root.Get((Object)("features"))));
+ //BA.debugLineNum = 71;BA.debugLine="For Each colfeatures As Map In features";
+_colfeatures = new anywheresoftware.b4a.objects.collections.Map();
+{
+final anywheresoftware.b4a.BA.IterableList group22 = _features;
+final int groupLen22 = group22.getSize()
+;int index22 = 0;
+;
+for (; index22 < groupLen22;index22++){
+_colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group22.Get(index22)));
+ //BA.debugLineNum = 72;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+_properties = new anywheresoftware.b4a.objects.collections.Map();
+_properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
+ //BA.debugLineNum = 73;BA.debugLine="Dim citizen_id As String = properties.Get(\"ci";
+_citizen_id = BA.ObjectToString(_properties.Get((Object)("citizen_id")));
+ //BA.debugLineNum = 74;BA.debugLine="Dim name As String = properties.Get(\"name\")";
+_name = BA.ObjectToString(_properties.Get((Object)("name")));
+ //BA.debugLineNum = 75;BA.debugLine="Dim count As String = properties.Get(\"count\")";
+_count = BA.ObjectToString(_properties.Get((Object)("count")));
+ //BA.debugLineNum = 76;BA.debugLine="ListView1.AddSingleLine(citizen_id&\"__\"&name)";
+mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence(_citizen_id+"__"+_name));
+ }
+};
+ //BA.debugLineNum = 79;BA.debugLine="Label12.Text=count";
+mostCurrent._label12.setText(BA.ObjectToCharSequence(_count));
+ break; }
+}
+;
+ }else {
+ //BA.debugLineNum = 86;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
+ //BA.debugLineNum = 87;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
+ };
+ //BA.debugLineNum = 89;BA.debugLine="Job.Release";
+_job._release();
+ //BA.debugLineNum = 90;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
