@@ -347,6 +347,9 @@ public b4a.example.add_mortality _add_mortality = null;
 public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.citizen _citizen = null;
+public b4a.example.owner_states _owner_states = null;
+public b4a.example.owners _owners = null;
+public b4a.example.lands _lands = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -406,8 +409,8 @@ public static String  _globals() throws Exception{
 mostCurrent._domain = "";
  //BA.debugLineNum = 17;BA.debugLine="Dim job2 As HttpJob";
 mostCurrent._job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
- //BA.debugLineNum = 19;BA.debugLine="domain=\"http://e0e5aadb.ngrok.io/\"";
-mostCurrent._domain = "http://e0e5aadb.ngrok.io/";
+ //BA.debugLineNum = 19;BA.debugLine="domain=\"http://0b7cfaa1.ngrok.io/\"";
+mostCurrent._domain = "http://0b7cfaa1.ngrok.io/";
  //BA.debugLineNum = 21;BA.debugLine="Private Label10 As Label";
 mostCurrent._label10 = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 22;BA.debugLine="Private Label11 As Label";

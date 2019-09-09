@@ -22,7 +22,7 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://e0e5aadb.ngrok.io/"
+	domain="http://0b7cfaa1.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label
@@ -76,13 +76,25 @@ Sub JobDone (Job As HttpJob)
 				Dim features As List = root.Get("features")
 				For Each colfeatures As Map In features
 					Dim properties As Map = colfeatures.Get("properties")
-					Dim citizen_id As String = properties.Get("citizen_id")
-					Dim name As String = properties.Get("name")
-					Dim count As String = properties.Get("count")
-					ListView1.AddSingleLine(citizen_id&"__"&name)
-					
+					Dim nik As String = properties.Get("nik")
+					Dim clan_name As String = properties.Get("clan_name")
+					Dim citizen_name As String = properties.Get("citizen_name")
+					Dim address As String = properties.Get("address")
+					Dim gender As String = properties.Get("gender")
+					Dim phone As String = properties.Get("phone")
+					Dim cs_name As String = properties.Get("cs_name")
+					Dim born_date As String = properties.Get("born_date")
+					ListView1.AddSingleLine("Citizen Id:"&nik)
+					ListView1.AddSingleLine("Name:"&citizen_name)
+					ListView1.AddSingleLine("Gender:"&gender)
+					ListView1.AddSingleLine("Phone:"&phone)
+					ListView1.AddSingleLine("Citizen Status:"&cs_name)
+					ListView1.AddSingleLine("Clan:"&clan_name)
+					ListView1.AddSingleLine("Address:"&address)
 				Next
-				Label12.Text=count
+				
+				
+				
 				
 
 
@@ -99,10 +111,10 @@ End Sub
 
 
 Sub Button1_Click
-	Dim fc_number As String
-	fc_number=EditText1.Text
+	Dim citizen_id As String
+	citizen_id=EditText1.Text
 	
 	job2.Initialize("Job3", Me)
-	job2.PostString(domain&"ta_v2/endpoint/fcn_search.php", "family_no="&fc_number)
+	job2.PostString(domain&"ta_v2/endpoint/citizen_search.php", "citizen_id="&citizen_id)
 	ProgressDialogShow("Loading...")
 End Sub

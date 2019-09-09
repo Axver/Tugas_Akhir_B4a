@@ -96,6 +96,27 @@
 			android:label="B4A Example"
 			android:screenOrientation="unspecified">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".owner_states"
+			android:label="B4A Example"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".owners"
+			android:label="B4A Example"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".lands"
+			android:label="B4A Example"
+			android:screenOrientation="unspecified">
+		</activity>
 		<service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service">
 		</service>
 		<receiver android:name="anywheresoftware.b4a.samples.httputils2.httputils2service$httputils2service_BR">
