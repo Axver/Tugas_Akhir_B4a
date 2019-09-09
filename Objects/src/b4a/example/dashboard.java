@@ -335,11 +335,17 @@ public anywheresoftware.b4a.objects.LabelWrapper _label10 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label11 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label12 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _button1 = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _button4 = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.birth _birth = null;
 public b4a.example.add_birth _add_birth = null;
+public b4a.example.mortality _mortality = null;
+public b4a.example.add_mortality _add_mortality = null;
+public b4a.example.outcome _outcome = null;
+public b4a.example.add_outcome _add_outcome = null;
+public b4a.example.family_card _family_card = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -349,33 +355,60 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 27;BA.debugLine="Activity.LoadLayout(\"dashboard\")";
+ //BA.debugLineNum = 26;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 28;BA.debugLine="Activity.LoadLayout(\"dashboard\")";
 mostCurrent._activity.LoadLayout("dashboard",mostCurrent.activityBA);
- //BA.debugLineNum = 28;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+ //BA.debugLineNum = 29;BA.debugLine="job2.Initialize(\"Job2\", Me)";
 mostCurrent._job2._initialize(processBA,"Job2",dashboard.getObject());
- //BA.debugLineNum = 29;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countAll.p";
+ //BA.debugLineNum = 30;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countAll.p";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countAll.php","send=test"+"&data=test");
- //BA.debugLineNum = 30;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+ //BA.debugLineNum = 31;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
- //BA.debugLineNum = 32;BA.debugLine="End Sub";
+ //BA.debugLineNum = 33;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+ //BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 36;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+mostCurrent._job2._initialize(processBA,"Job2",dashboard.getObject());
+ //BA.debugLineNum = 37;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countAll.p";
+mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countAll.php","send=test"+"&data=test");
+ //BA.debugLineNum = 38;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
- //BA.debugLineNum = 74;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 75;BA.debugLine="StartActivity(\"birth\")";
+ //BA.debugLineNum = 77;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 78;BA.debugLine="StartActivity(\"birth\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("birth"));
- //BA.debugLineNum = 76;BA.debugLine="End Sub";
+ //BA.debugLineNum = 79;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button2_click() throws Exception{
+ //BA.debugLineNum = 85;BA.debugLine="Sub Button2_Click";
+ //BA.debugLineNum = 86;BA.debugLine="StartActivity(\"mortality\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("mortality"));
+ //BA.debugLineNum = 87;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button3_click() throws Exception{
+ //BA.debugLineNum = 89;BA.debugLine="Sub Button3_Click";
+ //BA.debugLineNum = 90;BA.debugLine="StartActivity(\"outcome\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("outcome"));
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button4_click() throws Exception{
+ //BA.debugLineNum = 93;BA.debugLine="Sub Button4_Click";
+ //BA.debugLineNum = 94;BA.debugLine="StartActivity(\"family_card\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("family_card"));
+ //BA.debugLineNum = 95;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -384,8 +417,8 @@ public static String  _globals() throws Exception{
 mostCurrent._domain = "";
  //BA.debugLineNum = 16;BA.debugLine="Dim job2 As HttpJob";
 mostCurrent._job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
- //BA.debugLineNum = 17;BA.debugLine="domain=\"http://eb52df92.ngrok.io/\"";
-mostCurrent._domain = "http://eb52df92.ngrok.io/";
+ //BA.debugLineNum = 17;BA.debugLine="domain=\"http://e0e5aadb.ngrok.io/\"";
+mostCurrent._domain = "http://e0e5aadb.ngrok.io/";
  //BA.debugLineNum = 19;BA.debugLine="Private Label10 As Label";
 mostCurrent._label10 = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 20;BA.debugLine="Private Label11 As Label";
@@ -394,7 +427,9 @@ mostCurrent._label11 = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._label12 = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 22;BA.debugLine="Private Button1 As Button";
 mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="End Sub";
+ //BA.debugLineNum = 23;BA.debugLine="Private Button4 As Button";
+mostCurrent._button4 = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 24;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job) throws Exception{
@@ -406,27 +441,27 @@ anywheresoftware.b4a.objects.collections.Map _properties = null;
 String _citizen = "";
 String _land = "";
 String _building = "";
- //BA.debugLineNum = 42;BA.debugLine="Sub JobDone (Job As HttpJob)";
- //BA.debugLineNum = 44;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+ //BA.debugLineNum = 45;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ //BA.debugLineNum = 47;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
 anywheresoftware.b4a.keywords.Common.Log("JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success));
- //BA.debugLineNum = 45;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 48;BA.debugLine="If Job.Success = True Then";
 if (_job._success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 46;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 49;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 47;BA.debugLine="Select Job.JobName";
+ //BA.debugLineNum = 50;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"Job2")) {
 case 0: {
- //BA.debugLineNum = 49;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 52;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 50;BA.debugLine="parser.Initialize(Job.GetString)";
+ //BA.debugLineNum = 53;BA.debugLine="parser.Initialize(Job.GetString)";
 _parser.Initialize(_job._getstring());
- //BA.debugLineNum = 51;BA.debugLine="Dim root As Map = parser.NextObject";
+ //BA.debugLineNum = 54;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 52;BA.debugLine="Dim features As List = root.Get(\"features\")";
+ //BA.debugLineNum = 55;BA.debugLine="Dim features As List = root.Get(\"features\")";
 _features = new anywheresoftware.b4a.objects.collections.List();
 _features.setObject((java.util.List)(_root.Get((Object)("features"))));
- //BA.debugLineNum = 53;BA.debugLine="For Each colfeatures As Map In features";
+ //BA.debugLineNum = 56;BA.debugLine="For Each colfeatures As Map In features";
 _colfeatures = new anywheresoftware.b4a.objects.collections.Map();
 {
 final anywheresoftware.b4a.BA.IterableList group10 = _features;
@@ -435,22 +470,22 @@ final int groupLen10 = group10.getSize()
 ;
 for (; index10 < groupLen10;index10++){
 _colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group10.Get(index10)));
- //BA.debugLineNum = 54;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+ //BA.debugLineNum = 57;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
 _properties = new anywheresoftware.b4a.objects.collections.Map();
 _properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
- //BA.debugLineNum = 55;BA.debugLine="Dim citizen As String = properties.Get(\"citiz";
+ //BA.debugLineNum = 58;BA.debugLine="Dim citizen As String = properties.Get(\"citiz";
 _citizen = BA.ObjectToString(_properties.Get((Object)("citizen")));
- //BA.debugLineNum = 56;BA.debugLine="Dim land As String = properties.Get(\"land\")";
+ //BA.debugLineNum = 59;BA.debugLine="Dim land As String = properties.Get(\"land\")";
 _land = BA.ObjectToString(_properties.Get((Object)("land")));
- //BA.debugLineNum = 57;BA.debugLine="Dim building As String = properties.Get(\"buil";
+ //BA.debugLineNum = 60;BA.debugLine="Dim building As String = properties.Get(\"buil";
 _building = BA.ObjectToString(_properties.Get((Object)("building")));
- //BA.debugLineNum = 58;BA.debugLine="Log(building)";
+ //BA.debugLineNum = 61;BA.debugLine="Log(building)";
 anywheresoftware.b4a.keywords.Common.Log(_building);
- //BA.debugLineNum = 59;BA.debugLine="Label10.Text=land";
+ //BA.debugLineNum = 62;BA.debugLine="Label10.Text=land";
 mostCurrent._label10.setText(BA.ObjectToCharSequence(_land));
- //BA.debugLineNum = 60;BA.debugLine="Label11.Text=building";
+ //BA.debugLineNum = 63;BA.debugLine="Label11.Text=building";
 mostCurrent._label11.setText(BA.ObjectToCharSequence(_building));
- //BA.debugLineNum = 61;BA.debugLine="Label12.Text=citizen";
+ //BA.debugLineNum = 64;BA.debugLine="Label12.Text=citizen";
 mostCurrent._label12.setText(BA.ObjectToCharSequence(_citizen));
  }
 };
@@ -458,14 +493,21 @@ mostCurrent._label12.setText(BA.ObjectToCharSequence(_citizen));
 }
 ;
  }else {
- //BA.debugLineNum = 67;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+ //BA.debugLineNum = 70;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
- //BA.debugLineNum = 68;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+ //BA.debugLineNum = 71;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 70;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 73;BA.debugLine="Job.Release";
 _job._release();
- //BA.debugLineNum = 71;BA.debugLine="End Sub";
+ //BA.debugLineNum = 74;BA.debugLine="End Sub";
+return "";
+}
+public static String  _label3_click() throws Exception{
+ //BA.debugLineNum = 81;BA.debugLine="Sub Label3_Click";
+ //BA.debugLineNum = 82;BA.debugLine="StartActivity(\"dashboard\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("dashboard"));
+ //BA.debugLineNum = 83;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

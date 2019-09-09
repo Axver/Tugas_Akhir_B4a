@@ -21,7 +21,7 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="http://eb52df92.ngrok.io/"
+	domain="http://e0e5aadb.ngrok.io/"
 	
 	Dim SV As ScrollView
 	Dim Header As Panel
@@ -49,6 +49,7 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("birth")
 	SV.Initialize(0)
@@ -61,6 +62,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'add header
 	SetHeader(Array As String("Id", "Reporter", "Type Of Birth", "Weight"))
 	job2.Initialize("Job2", Me)
+	
 	job2.PostString(domain&"ta_v2/endpoint/birthData.php", "send=test" &"&data=test")
 	ProgressDialogShow("Loading...")
 	'add rows
@@ -75,7 +77,10 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-
+	ClearAll
+	job2.Initialize("Job2", Me)
+	job2.PostString(domain&"ta_v2/endpoint/birthData.php", "send=test" &"&data=test")
+	ProgressDialogShow("Loading...")
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -152,7 +157,7 @@ Sub SetHeader(Values() As String)
 		l.Tag = i
 		Header.AddView(l, ColumnWidth * i, 0, ColumnWidth, RowHeight)
 	Next
-	Activity.AddView(Header, SV.Left, SV.Top+100, SV.Width, RowHeight)
+	Activity.AddView(Header, SV.Left, SV.Top+200, SV.Width, RowHeight)
 End Sub
 Sub NumberOfRows As Int
 	Return Table.NumberOfViews / NumberOfColumns
@@ -176,7 +181,7 @@ Sub JobDone (Job As HttpJob)
 	
 	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
 	If Job.Success = True Then
-		
+		ClearAll
 		
 		Select Job.JobName
 			Case "Job2"
@@ -211,4 +216,8 @@ End Sub
 
 Sub Label7_Click
 	StartActivity("add_birth")
+End Sub
+
+Sub Label3_Click
+	StartActivity("dashboard")
 End Sub

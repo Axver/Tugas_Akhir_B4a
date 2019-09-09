@@ -334,6 +334,11 @@ public b4a.example.starter _starter = null;
 public b4a.example.dashboard _dashboard = null;
 public b4a.example.birth _birth = null;
 public b4a.example.add_birth _add_birth = null;
+public b4a.example.mortality _mortality = null;
+public b4a.example.add_mortality _add_mortality = null;
+public b4a.example.outcome _outcome = null;
+public b4a.example.add_outcome _add_outcome = null;
+public b4a.example.family_card _family_card = null;
 
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
@@ -341,6 +346,11 @@ vis = vis | (main.mostCurrent != null);
 vis = vis | (dashboard.mostCurrent != null);
 vis = vis | (birth.mostCurrent != null);
 vis = vis | (add_birth.mostCurrent != null);
+vis = vis | (mortality.mostCurrent != null);
+vis = vis | (add_mortality.mostCurrent != null);
+vis = vis | (outcome.mostCurrent != null);
+vis = vis | (add_outcome.mostCurrent != null);
+vis = vis | (family_card.mostCurrent != null);
 return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -383,6 +393,11 @@ starter._process_globals();
 dashboard._process_globals();
 birth._process_globals();
 add_birth._process_globals();
+mortality._process_globals();
+add_mortality._process_globals();
+outcome._process_globals();
+add_outcome._process_globals();
+family_card._process_globals();
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

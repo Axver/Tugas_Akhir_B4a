@@ -20,12 +20,13 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="http://eb52df92.ngrok.io/"
+	domain="http://e0e5aadb.ngrok.io/"
 	
 	Private Label10 As Label
 	Private Label11 As Label
 	Private Label12 As Label
 	Private Button1 As Button
+	Private Button4 As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -38,7 +39,9 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-
+	job2.Initialize("Job2", Me)
+	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
+	ProgressDialogShow("Loading...")
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -79,4 +82,20 @@ End Sub
 
 Sub Button1_Click
 	StartActivity("birth")
+End Sub
+
+Sub Label3_Click
+	StartActivity("dashboard")
+End Sub
+
+Sub Button2_Click
+	StartActivity("mortality")
+End Sub
+
+Sub Button3_Click
+	StartActivity("outcome")
+End Sub
+
+Sub Button4_Click
+	StartActivity("family_card")
 End Sub
