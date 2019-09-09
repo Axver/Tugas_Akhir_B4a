@@ -6,7 +6,7 @@ Version=8.3
 @EndOfDesignText@
 #Region  Activity Attributes 
 	#FullScreen: True
-	#IncludeTitle: false
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
@@ -18,30 +18,31 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
+	
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="http://e0e5aadb.ngrok.io/"
 	
+	domain="http://e0e5aadb.ngrok.io/"
+
 	Private Label10 As Label
 	Private Label11 As Label
+	Private EditText1 As EditText
+	Private ListView1 As ListView
 	Private Label12 As Label
-	Private Button1 As Button
-	Private Button4 As Button
-	Private Button5 As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("dashboard")
+	Activity.LoadLayout("citizen")
 	job2.Initialize("Job2", Me)
-	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
+	job2.PostString(domain&"ta_v2/endpoint/countFcn.php", "send=test" &"&data=test")
 	ProgressDialogShow("Loading...")
 
 End Sub
 
 Sub Activity_Resume
 	job2.Initialize("Job2", Me)
-	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
+	job2.PostString(domain&"ta_v2/endpoint/countFcn.php", "send=test" &"&data=test")
 	ProgressDialogShow("Loading...")
 End Sub
 
@@ -62,14 +63,28 @@ Sub JobDone (Job As HttpJob)
 				Dim features As List = root.Get("features")
 				For Each colfeatures As Map In features
 					Dim properties As Map = colfeatures.Get("properties")
-					Dim citizen1 As String = properties.Get("citizen")
-					Dim land As String = properties.Get("land")
-					Dim building As String = properties.Get("building")
-					Log(building)
-					Label10.Text=land
-					Label11.Text=building
-					Label12.Text=citizen1
+					Dim fcn As String = properties.Get("fcn")
+					Dim fcc As String = properties.Get("fcc")
+					
+					Label10.Text=fcn
+					Label11.Text=fcc
 				Next
+			Case "Job3"
+				Dim parser As JSONParser
+				parser.Initialize(Job.GetString)
+				Dim root As Map = parser.NextObject
+				Dim features As List = root.Get("features")
+				For Each colfeatures As Map In features
+					Dim properties As Map = colfeatures.Get("properties")
+					Dim citizen_id As String = properties.Get("citizen_id")
+					Dim name As String = properties.Get("name")
+					Dim count As String = properties.Get("count")
+					ListView1.AddSingleLine(citizen_id&"__"&name)
+					
+				Next
+				Label12.Text=count
+				
+
 
 			
 		End Select
@@ -81,26 +96,13 @@ Sub JobDone (Job As HttpJob)
 End Sub
 
 
+
+
 Sub Button1_Click
-	StartActivity("birth")
-End Sub
-
-Sub Label3_Click
-	StartActivity("dashboard")
-End Sub
-
-Sub Button2_Click
-	StartActivity("mortality")
-End Sub
-
-Sub Button3_Click
-	StartActivity("outcome")
-End Sub
-
-Sub Button4_Click
-	StartActivity("family_card")
-End Sub
-
-Sub Button5_Click
-	StartActivity("citizen")
+	Dim fc_number As String
+	fc_number=EditText1.Text
+	
+	job2.Initialize("Job3", Me)
+	job2.PostString(domain&"ta_v2/endpoint/fcn_search.php", "family_no="&fc_number)
+	ProgressDialogShow("Loading...")
 End Sub

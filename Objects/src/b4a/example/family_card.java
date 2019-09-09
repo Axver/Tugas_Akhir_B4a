@@ -346,6 +346,7 @@ public b4a.example.mortality _mortality = null;
 public b4a.example.add_mortality _add_mortality = null;
 public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
+public b4a.example.citizen _citizen = null;
 
 public static void initializeProcessGlobals() {
              try {
