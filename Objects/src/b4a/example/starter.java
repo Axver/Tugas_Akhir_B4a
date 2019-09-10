@@ -139,6 +139,7 @@ public b4a.example.citizen _citizen = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
 public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
  //BA.debugLineNum = 28;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
  //BA.debugLineNum = 29;BA.debugLine="Return True";

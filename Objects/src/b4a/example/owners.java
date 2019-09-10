@@ -343,6 +343,7 @@ public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 
 public static void initializeProcessGlobals() {
              try {

@@ -343,6 +343,7 @@ public b4a.example.citizen _citizen = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
 public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
@@ -359,6 +360,7 @@ vis = vis | (citizen.mostCurrent != null);
 vis = vis | (owner_states.mostCurrent != null);
 vis = vis | (owners.mostCurrent != null);
 vis = vis | (lands.mostCurrent != null);
+vis = vis | (lands_id.mostCurrent != null);
 return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -410,6 +412,7 @@ citizen._process_globals();
 owner_states._process_globals();
 owners._process_globals();
 lands._process_globals();
+lands_id._process_globals();
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

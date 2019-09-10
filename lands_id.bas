@@ -30,7 +30,7 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
-	Activity.LoadLayout("lands")
+	Activity.LoadLayout("lands_id")
 	
 	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/layers.php?request=all")
 	ProgressDialogShow("Loading...")

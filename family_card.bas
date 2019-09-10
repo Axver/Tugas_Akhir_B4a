@@ -22,7 +22,7 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://0b7cfaa1.ngrok.io/"
+	domain="http://3f86ea95.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label

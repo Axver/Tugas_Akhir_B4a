@@ -351,6 +351,7 @@ public b4a.example.citizen _citizen = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
 public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -430,8 +431,8 @@ mostCurrent._edittext4 = new anywheresoftware.b4a.objects.EditTextWrapper();
 mostCurrent._edittext5 = new anywheresoftware.b4a.objects.EditTextWrapper();
  //BA.debugLineNum = 22;BA.debugLine="Private Button1 As Button";
 mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="domain=\"http://0b7cfaa1.ngrok.io/\"";
-mostCurrent._domain = "http://0b7cfaa1.ngrok.io/";
+ //BA.debugLineNum = 23;BA.debugLine="domain=\"http://3f86ea95.ngrok.io/\"";
+mostCurrent._domain = "http://3f86ea95.ngrok.io/";
  //BA.debugLineNum = 24;BA.debugLine="End Sub";
 return "";
 }

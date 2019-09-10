@@ -14,8 +14,8 @@ import anywheresoftware.b4a.B4AUncaughtException;
 import anywheresoftware.b4a.debug.*;
 import java.lang.ref.WeakReference;
 
-public class lands extends Activity implements B4AActivity{
-	public static lands mostCurrent;
+public class lands_id extends Activity implements B4AActivity{
+	public static lands_id mostCurrent;
 	static boolean afterFirstLayout;
 	static boolean isFirst = true;
     private static boolean processGlobalsRun = false;
@@ -33,7 +33,7 @@ public class lands extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.lands");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.lands_id");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -42,7 +42,7 @@ public class lands extends Activity implements B4AActivity{
 		else if (previousOne != null) {
 			Activity p = previousOne.get();
 			if (p != null && p != this) {
-                BA.LogInfo("Killing previous instance (lands).");
+                BA.LogInfo("Killing previous instance (lands_id).");
 				p.finish();
 			}
 		}
@@ -85,7 +85,7 @@ public class lands extends Activity implements B4AActivity{
 	private void afterFirstLayout() {
         if (this != mostCurrent)
 			return;
-		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.lands");
+		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.lands_id");
         
         processBA.sharedProcessBA.activityBA = new java.lang.ref.WeakReference<BA>(activityBA);
         anywheresoftware.b4a.objects.ViewWrapper.lastId = 0;
@@ -94,19 +94,19 @@ public class lands extends Activity implements B4AActivity{
         if (BA.isShellModeRuntimeCheck(processBA)) {
 			if (isFirst)
 				processBA.raiseEvent2(null, true, "SHELL", false);
-			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.lands", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
+			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.lands_id", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
 			_activity.reinitializeForShell(activityBA, "activity");
 		}
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (lands) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (lands_id) Create, isFirst = " + isFirst + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
 			return;
         processBA.setActivityPaused(false);
-        BA.LogInfo("** Activity (lands) Resume **");
+        BA.LogInfo("** Activity (lands_id) Resume **");
         processBA.raiseEvent(null, "activity_resume");
         if (android.os.Build.VERSION.SDK_INT >= 11) {
 			try {
@@ -195,7 +195,7 @@ public class lands extends Activity implements B4AActivity{
 		}
 	}
     public static Class<?> getObject() {
-		return lands.class;
+		return lands_id.class;
 	}
     private Boolean onKeySubExist = null;
     private Boolean onKeyUpSubExist = null;
@@ -266,7 +266,7 @@ public class lands extends Activity implements B4AActivity{
         if (this != mostCurrent)
 			return;
 		anywheresoftware.b4a.Msgbox.dismiss(true);
-        BA.LogInfo("** Activity (lands) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
+        BA.LogInfo("** Activity (lands_id) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
         if (mostCurrent != null)
             processBA.raiseEvent2(_activity, true, "activity_pause", false, activityBA.activity.isFinishing());		
         processBA.setActivityPaused(true);
@@ -300,11 +300,11 @@ public class lands extends Activity implements B4AActivity{
     		this.activity = new WeakReference<Activity>(activity);
     	}
 		public void run() {
-            lands mc = mostCurrent;
+            lands_id mc = mostCurrent;
 			if (mc == null || mc != activity.get())
 				return;
 			processBA.setActivityPaused(false);
-            BA.LogInfo("** Activity (lands) Resume **");
+            BA.LogInfo("** Activity (lands_id) Resume **");
             if (mc != mostCurrent)
                 return;
 		    processBA.raiseEvent(mc._activity, "activity_resume", (Object[])null);
@@ -348,7 +348,7 @@ public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
-public b4a.example.lands_id _lands_id = null;
+public b4a.example.lands _lands = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -359,8 +359,8 @@ public static void initializeProcessGlobals() {
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 27;BA.debugLine="Activity.LoadLayout(\"lands\")";
-mostCurrent._activity.LoadLayout("lands",mostCurrent.activityBA);
+ //BA.debugLineNum = 27;BA.debugLine="Activity.LoadLayout(\"lands_id\")";
+mostCurrent._activity.LoadLayout("lands_id",mostCurrent.activityBA);
  //BA.debugLineNum = 29;BA.debugLine="WebView1.LoadUrl(domain&\"ta_v2/endpoint/view/laye";
 mostCurrent._webview1.LoadUrl(mostCurrent._domain+"ta_v2/endpoint/view/layers.php?request=all");
  //BA.debugLineNum = 30;BA.debugLine="ProgressDialogShow(\"Loading...\")";
@@ -390,7 +390,7 @@ mostCurrent._webview1.LoadUrl(mostCurrent._domain+"ta_v2/endpoint/view/land_tax_
  //BA.debugLineNum = 54;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
  //BA.debugLineNum = 56;BA.debugLine="job2.Initialize(\"Job2\", Me)";
-mostCurrent._job2._initialize(processBA,"Job2",lands.getObject());
+mostCurrent._job2._initialize(processBA,"Job2",lands_id.getObject());
  //BA.debugLineNum = 57;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/land_tax.p";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/land_tax.php","tax_number="+_tax_number);
  //BA.debugLineNum = 58;BA.debugLine="ProgressDialogShow(\"Loading...\")";

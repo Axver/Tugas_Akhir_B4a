@@ -22,13 +22,14 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://0b7cfaa1.ngrok.io/"
+	domain="http://3f86ea95.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label
 	Private EditText1 As EditText
 	Private ListView1 As ListView
 	Private Label12 As Label
+	Private ScrollView1 As ScrollView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -55,6 +56,7 @@ Sub JobDone (Job As HttpJob)
 	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
 	If Job.Success = True Then
 		ProgressDialogHide
+		
 		Select Job.JobName
 			Case "Job2"
 				Dim parser As JSONParser
@@ -84,13 +86,16 @@ Sub JobDone (Job As HttpJob)
 					Dim phone As String = properties.Get("phone")
 					Dim cs_name As String = properties.Get("cs_name")
 					Dim born_date As String = properties.Get("born_date")
-					ListView1.AddSingleLine("Citizen Id:"&nik)
-					ListView1.AddSingleLine("Name:"&citizen_name)
-					ListView1.AddSingleLine("Gender:"&gender)
-					ListView1.AddSingleLine("Phone:"&phone)
-					ListView1.AddSingleLine("Citizen Status:"&cs_name)
-					ListView1.AddSingleLine("Clan:"&clan_name)
+					
+					ListView1.AddSingleLine("Citize Id:"&nik)
+					ListView1.AddSingleLine("Clan Name:"&clan_name)
+					ListView1.AddSingleLine("Citizen Name:"&citizen_name)
 					ListView1.AddSingleLine("Address:"&address)
+					ListView1.AddSingleLine("Phone:"&phone)
+					ListView1.AddSingleLine("Gender:"&gender)
+					ListView1.AddSingleLine("Citizen Status:"&cs_name)
+					ListView1.AddSingleLine("Born Date:"&born_date)
+					
 				Next
 				
 				
