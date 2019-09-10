@@ -28,6 +28,7 @@ Sub Globals
 	Private Button1 As Button
 	Private Button4 As Button
 	Private Button5 As Button
+	Private WebView1 As WebView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -36,6 +37,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	job2.Initialize("Job2", Me)
 	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
 	ProgressDialogShow("Loading...")
+	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/layers.php?request=all")
 
 End Sub
 
@@ -43,6 +45,7 @@ Sub Activity_Resume
 	job2.Initialize("Job2", Me)
 	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
 	ProgressDialogShow("Loading...")
+	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/layers.php?request=all")
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
