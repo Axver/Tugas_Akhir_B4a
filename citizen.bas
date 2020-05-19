@@ -18,7 +18,8 @@ End Sub
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
 	'These variables can only be accessed from this module.
-	
+	Dim pnlInput, pnlSelect, PanelMain As Panel
+	Dim mh1,mh2,mw1,mw2 As Float
 	Dim domain As String
 	Dim job2 As HttpJob
 	
@@ -30,6 +31,7 @@ Sub Globals
 	Private ListView1 As ListView
 	Private Label12 As Label
 	Private ScrollView1 As ScrollView
+	Private Button1 As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -88,21 +90,16 @@ Sub JobDone (Job As HttpJob)
 					Dim cs_name As String = properties.Get("cs_name")
 					Dim born_date As String = properties.Get("born_date")
 					
-					ListView1.AddSingleLine("Citize Id:"&nik)
-					ListView1.AddSingleLine("Clan Name:"&clan_name)
-					ListView1.AddSingleLine("Citizen Name:"&citizen_name)
-					ListView1.AddSingleLine("Address:"&address)
-					ListView1.AddSingleLine("Phone:"&phone)
-					ListView1.AddSingleLine("Gender:"&gender)
-					ListView1.AddSingleLine("Citizen Status:"&cs_name)
-					ListView1.AddSingleLine("Born Date:"&born_date)
 					
 				Next
 				
-				
-				
-				
-
+				ListView1.AddSingleLine(nik)
+				ListView1.AddSingleLine("Land Owning")
+				ListView1.AddSingleLine("Building Owning")
+				ListView1.SingleLineLayout.Label.TextSize=20
+				ListView1.SingleLineLayout.ItemHeight = 24dip
+				ListView1.SingleLineLayout.Label.TextColor = Colors.White
+				ListView1.SingleLineLayout.Label.Gravity=Gravity.CENTER_HORIZONTAL
 
 				Job.Release
 		End Select
@@ -135,4 +132,49 @@ Sub Button1_Click
 			ListView1.RemoveAt(x-1)
 		End If
 	Next
+End Sub
+
+
+Sub PanPop (mlayout As String, hc As Int, wc As Int,NIK As String) '( mlayout=your .bal file, hc=height offset + or -, wc=same for width )
+	
+	pnlSelect.Initialize ( "Select")
+	pnlInput.Initialize ("")
+	pnlInput.LoadLayout ( mlayout )
+	
+	pnlSelect.BringToFront
+	pnlSelect.Color  = Colors.ARGB (150,0,0,0)
+	Activity.AddView (pnlSelect, 0, 0,   100%x, 100%y)
+	mh1=(pnlSelect.Height/2) - (PanelMain.Height/2) + hc
+	mw1=pnlSelect.Width/2 - (PanelMain.Width/2) + wc
+	mh2=PanelMain.Height
+	mw2=PanelMain.Width
+	pnlSelect.AddView (pnlInput, mw1, mh1, mw2, mh2)
+	'Jalankan Job4 disini
+	
+	
+	
+	
+	
+	
+End Sub
+
+Sub Select_Click ' Stop clicks on Select panel getting to panel underneath
+	'this sub stops other clicks outside your panel from working
+	pnlSelect.RemoveView
+	Button1.Visible=True
+End Sub
+
+Sub ListView1_ItemClick (Position As Int, Value As Object)
+	Button1.Visible=False
+'	job2.Initialize("Job4", Me)
+'	job2.PostString(domain&"ta_v2/endpoint/citizen_by_nik.php", "citizen_id="&Value)
+'	ProgressDialogShow("Loading...")
+	PanPop("cpanel.bal", 20, 10,Value)
+	'ListView1.RemoveAt(Position)
+	Log("Data yang diklik: " & Value)
+'	Label1.Text="Name:"&citizen_name_g
+'	Label2.Text="Phone:"&phone_g
+'	Label3.Text="Gender:"&gender_g
+'	Label4.Text="Status:"&status_g
+'	Label5.Text="Clan:"&clan_g
 End Sub

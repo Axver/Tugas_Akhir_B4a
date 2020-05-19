@@ -338,6 +338,13 @@ public static void initializeProcessGlobals() {
             }
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnlinput = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnlselect = null;
+public anywheresoftware.b4a.objects.PanelWrapper _panelmain = null;
+public static float _mh1 = 0f;
+public static float _mh2 = 0f;
+public static float _mw1 = 0f;
+public static float _mw2 = 0f;
 public static String _domain = "";
 public anywheresoftware.b4a.samples.httputils2.httpjob _job2 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label10 = null;
@@ -346,6 +353,7 @@ public anywheresoftware.b4a.objects.EditTextWrapper _edittext1 = null;
 public anywheresoftware.b4a.objects.ListViewWrapper _listview1 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _label12 = null;
 public anywheresoftware.b4a.objects.ScrollViewWrapper _scrollview1 = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _button1 = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
@@ -601,51 +609,126 @@ _cs_name = BA.ObjectToString(_properties.Get((Object)("cs_name")));
 RDebugUtils.currentLine=8192035;
  //BA.debugLineNum = 8192035;BA.debugLine="Dim born_date As String = properties.Get(\"bor";
 _born_date = BA.ObjectToString(_properties.Get((Object)("born_date")));
-RDebugUtils.currentLine=8192037;
- //BA.debugLineNum = 8192037;BA.debugLine="ListView1.AddSingleLine(\"Citize Id:\"&nik)";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citize Id:"+_nik));
-RDebugUtils.currentLine=8192038;
- //BA.debugLineNum = 8192038;BA.debugLine="ListView1.AddSingleLine(\"Clan Name:\"&clan_nam";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Clan Name:"+_clan_name));
-RDebugUtils.currentLine=8192039;
- //BA.debugLineNum = 8192039;BA.debugLine="ListView1.AddSingleLine(\"Citizen Name:\"&citiz";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citizen Name:"+_citizen_name));
-RDebugUtils.currentLine=8192040;
- //BA.debugLineNum = 8192040;BA.debugLine="ListView1.AddSingleLine(\"Address:\"&address)";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Address:"+_address));
-RDebugUtils.currentLine=8192041;
- //BA.debugLineNum = 8192041;BA.debugLine="ListView1.AddSingleLine(\"Phone:\"&phone)";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Phone:"+_phone));
-RDebugUtils.currentLine=8192042;
- //BA.debugLineNum = 8192042;BA.debugLine="ListView1.AddSingleLine(\"Gender:\"&gender)";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Gender:"+_gender));
-RDebugUtils.currentLine=8192043;
- //BA.debugLineNum = 8192043;BA.debugLine="ListView1.AddSingleLine(\"Citizen Status:\"&cs_";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citizen Status:"+_cs_name));
-RDebugUtils.currentLine=8192044;
- //BA.debugLineNum = 8192044;BA.debugLine="ListView1.AddSingleLine(\"Born Date:\"&born_dat";
-mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Born Date:"+_born_date));
  }
 };
-RDebugUtils.currentLine=8192053;
- //BA.debugLineNum = 8192053;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=8192040;
+ //BA.debugLineNum = 8192040;BA.debugLine="ListView1.AddSingleLine(nik)";
+mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence(_nik));
+RDebugUtils.currentLine=8192041;
+ //BA.debugLineNum = 8192041;BA.debugLine="ListView1.AddSingleLine(\"Land Owning\")";
+mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Land Owning"));
+RDebugUtils.currentLine=8192042;
+ //BA.debugLineNum = 8192042;BA.debugLine="ListView1.AddSingleLine(\"Building Owning\")";
+mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Building Owning"));
+RDebugUtils.currentLine=8192043;
+ //BA.debugLineNum = 8192043;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize=20";
+mostCurrent._listview1.getSingleLineLayout().Label.setTextSize((float) (20));
+RDebugUtils.currentLine=8192044;
+ //BA.debugLineNum = 8192044;BA.debugLine="ListView1.SingleLineLayout.ItemHeight = 24dip";
+mostCurrent._listview1.getSingleLineLayout().setItemHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (24)));
+RDebugUtils.currentLine=8192045;
+ //BA.debugLineNum = 8192045;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor = C";
+mostCurrent._listview1.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.White);
+RDebugUtils.currentLine=8192046;
+ //BA.debugLineNum = 8192046;BA.debugLine="ListView1.SingleLineLayout.Label.Gravity=Gravi";
+mostCurrent._listview1.getSingleLineLayout().Label.setGravity(anywheresoftware.b4a.keywords.Common.Gravity.CENTER_HORIZONTAL);
+RDebugUtils.currentLine=8192048;
+ //BA.debugLineNum = 8192048;BA.debugLine="Job.Release";
 _job._release();
  break; }
 }
 ;
  }else {
-RDebugUtils.currentLine=8192056;
- //BA.debugLineNum = 8192056;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+RDebugUtils.currentLine=8192051;
+ //BA.debugLineNum = 8192051;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
-RDebugUtils.currentLine=8192057;
- //BA.debugLineNum = 8192057;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+RDebugUtils.currentLine=8192052;
+ //BA.debugLineNum = 8192052;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=8192058;
- //BA.debugLineNum = 8192058;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=8192053;
+ //BA.debugLineNum = 8192053;BA.debugLine="Job.Release";
 _job._release();
  };
-RDebugUtils.currentLine=8192061;
- //BA.debugLineNum = 8192061;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8192056;
+ //BA.debugLineNum = 8192056;BA.debugLine="End Sub";
+return "";
+}
+public static String  _listview1_itemclick(int _position,Object _value) throws Exception{
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "listview1_itemclick"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "listview1_itemclick", new Object[] {_position,_value}));}
+RDebugUtils.currentLine=12320768;
+ //BA.debugLineNum = 12320768;BA.debugLine="Sub ListView1_ItemClick (Position As Int, Value As";
+RDebugUtils.currentLine=12320769;
+ //BA.debugLineNum = 12320769;BA.debugLine="Button1.Visible=False";
+mostCurrent._button1.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=12320773;
+ //BA.debugLineNum = 12320773;BA.debugLine="PanPop(\"cpanel.bal\", 20, 10,Value)";
+_panpop("cpanel.bal",(int) (20),(int) (10),BA.ObjectToString(_value));
+RDebugUtils.currentLine=12320775;
+ //BA.debugLineNum = 12320775;BA.debugLine="Log(\"Data yang diklik: \" & Value)";
+anywheresoftware.b4a.keywords.Common.Log("Data yang diklik: "+BA.ObjectToString(_value));
+RDebugUtils.currentLine=12320781;
+ //BA.debugLineNum = 12320781;BA.debugLine="End Sub";
+return "";
+}
+public static String  _panpop(String _mlayout,int _hc,int _wc,String _nik) throws Exception{
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "panpop"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "panpop", new Object[] {_mlayout,_hc,_wc,_nik}));}
+RDebugUtils.currentLine=12189696;
+ //BA.debugLineNum = 12189696;BA.debugLine="Sub PanPop (mlayout As String, hc As Int, wc As In";
+RDebugUtils.currentLine=12189698;
+ //BA.debugLineNum = 12189698;BA.debugLine="pnlSelect.Initialize ( \"Select\")";
+mostCurrent._pnlselect.Initialize(mostCurrent.activityBA,"Select");
+RDebugUtils.currentLine=12189699;
+ //BA.debugLineNum = 12189699;BA.debugLine="pnlInput.Initialize (\"\")";
+mostCurrent._pnlinput.Initialize(mostCurrent.activityBA,"");
+RDebugUtils.currentLine=12189700;
+ //BA.debugLineNum = 12189700;BA.debugLine="pnlInput.LoadLayout ( mlayout )";
+mostCurrent._pnlinput.LoadLayout(_mlayout,mostCurrent.activityBA);
+RDebugUtils.currentLine=12189702;
+ //BA.debugLineNum = 12189702;BA.debugLine="pnlSelect.BringToFront";
+mostCurrent._pnlselect.BringToFront();
+RDebugUtils.currentLine=12189703;
+ //BA.debugLineNum = 12189703;BA.debugLine="pnlSelect.Color  = Colors.ARGB (150,0,0,0)";
+mostCurrent._pnlselect.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (150),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=12189704;
+ //BA.debugLineNum = 12189704;BA.debugLine="Activity.AddView (pnlSelect, 0, 0,   100%x, 100%y";
+mostCurrent._activity.AddView((android.view.View)(mostCurrent._pnlselect.getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
+RDebugUtils.currentLine=12189705;
+ //BA.debugLineNum = 12189705;BA.debugLine="mh1=(pnlSelect.Height/2) - (PanelMain.Height/2) +";
+_mh1 = (float) ((mostCurrent._pnlselect.getHeight()/(double)2)-(mostCurrent._panelmain.getHeight()/(double)2)+_hc);
+RDebugUtils.currentLine=12189706;
+ //BA.debugLineNum = 12189706;BA.debugLine="mw1=pnlSelect.Width/2 - (PanelMain.Width/2) + wc";
+_mw1 = (float) (mostCurrent._pnlselect.getWidth()/(double)2-(mostCurrent._panelmain.getWidth()/(double)2)+_wc);
+RDebugUtils.currentLine=12189707;
+ //BA.debugLineNum = 12189707;BA.debugLine="mh2=PanelMain.Height";
+_mh2 = (float) (mostCurrent._panelmain.getHeight());
+RDebugUtils.currentLine=12189708;
+ //BA.debugLineNum = 12189708;BA.debugLine="mw2=PanelMain.Width";
+_mw2 = (float) (mostCurrent._panelmain.getWidth());
+RDebugUtils.currentLine=12189709;
+ //BA.debugLineNum = 12189709;BA.debugLine="pnlSelect.AddView (pnlInput, mw1, mh1, mw2, mh2)";
+mostCurrent._pnlselect.AddView((android.view.View)(mostCurrent._pnlinput.getObject()),(int) (_mw1),(int) (_mh1),(int) (_mw2),(int) (_mh2));
+RDebugUtils.currentLine=12189717;
+ //BA.debugLineNum = 12189717;BA.debugLine="End Sub";
+return "";
+}
+public static String  _select_click() throws Exception{
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "select_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "select_click", null));}
+RDebugUtils.currentLine=12255232;
+ //BA.debugLineNum = 12255232;BA.debugLine="Sub Select_Click ' Stop clicks on Select panel get";
+RDebugUtils.currentLine=12255234;
+ //BA.debugLineNum = 12255234;BA.debugLine="pnlSelect.RemoveView";
+mostCurrent._pnlselect.RemoveView();
+RDebugUtils.currentLine=12255235;
+ //BA.debugLineNum = 12255235;BA.debugLine="Button1.Visible=True";
+mostCurrent._button1.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=12255236;
+ //BA.debugLineNum = 12255236;BA.debugLine="End Sub";
 return "";
 }
 }
