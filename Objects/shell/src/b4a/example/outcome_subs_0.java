@@ -316,8 +316,8 @@ public static RemoteObject  _globals() throws Exception{
 outcome.mostCurrent._domain = RemoteObject.createImmutable("");
  //BA.debugLineNum = 17;BA.debugLine="Dim job2 As HttpJob";
 outcome.mostCurrent._job2 = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");
- //BA.debugLineNum = 18;BA.debugLine="domain=\"http://a56cb1fd.ngrok.io/\"";
-outcome.mostCurrent._domain = BA.ObjectToString("http://a56cb1fd.ngrok.io/");
+ //BA.debugLineNum = 18;BA.debugLine="domain=\"https://b9312448.ngrok.io/\"";
+outcome.mostCurrent._domain = BA.ObjectToString("https://b9312448.ngrok.io/");
  //BA.debugLineNum = 20;BA.debugLine="Dim SV As ScrollView";
 outcome.mostCurrent._sv = RemoteObject.createNew ("anywheresoftware.b4a.objects.ScrollViewWrapper");
  //BA.debugLineNum = 21;BA.debugLine="Dim Header As Panel";

@@ -23,8 +23,14 @@ Sub Globals
 	Dim domain As String
 	Dim mh1,mh2,mw1,mw2 As Float
 	Dim job2 As HttpJob
+	Dim citizen_name_g As String
+	Dim clan_g As String
+	Dim gender_g As String
+	Dim phone_g As String
+	Dim status_g As String
 	
-	domain="http://a56cb1fd.ngrok.io/"
+	
+	domain="https://b9312448.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label
@@ -96,12 +102,29 @@ Sub JobDone (Job As HttpJob)
 					
 					
 				Next
+			Case "Job4"
+				Dim parser As JSONParser
+				Log(Job.GetString)
+				parser.Initialize(Job.GetString)
+				Dim root As Map = parser.NextObject
+				Dim nik As String = root.Get("nik")
+				Dim clan_name As String = root.Get("clan_name")
+				Dim citizen_name As String = root.Get("citizen_name")
+				Dim gender As String = root.Get("gender")
+				Dim phone As String = root.Get("phone")
+				Dim status_name As String = root.Get("status_name")
+				Dim born_date As String = root.Get("born_date")
+
+				citizen_name_g=citizen_name
+				gender_g=gender
+				phone_g=phone
+				status_g=status_name
 				Label12.Text=count
 				
-
-
+				
 			
 		End Select
+		
 	Else
 		Log("Error: " & Job.ErrorMessage)
 		ToastMessageShow("Error: " & Job.ErrorMessage, True)
@@ -136,11 +159,20 @@ End Sub
 
 Sub ListView1_ItemClick (Position As Int, Value As Object)
 	Button1.Visible=False
-	PanPop("fcpanel.bal", 20, 10)
+	job2.Initialize("Job4", Me)
+	job2.PostString(domain&"ta_v2/endpoint/citizen_by_nik.php", "citizen_id="&Value)
+	ProgressDialogShow("Loading...")
+	PanPop("fcpanel.bal", 20, 10,Value)
 	'ListView1.RemoveAt(Position)
+	Log("Data yang diklik: " & Value)
+	Label1.Text="Name:"&citizen_name_g
+	Label2.Text="Phone:"&phone_g
+	Label3.Text="Gender:"&gender_g
+	Label4.Text="Status:"&status_g
+	Label5.Text="Clan:"&clan_g
 End Sub
 
-Sub PanPop (mlayout As String, hc As Int, wc As Int) '( mlayout=your .bal file, hc=height offset + or -, wc=same for width )
+Sub PanPop (mlayout As String, hc As Int, wc As Int,NIK As String) '( mlayout=your .bal file, hc=height offset + or -, wc=same for width )
 	
 	pnlSelect.Initialize ( "Select")
 	pnlInput.Initialize ("")
@@ -154,8 +186,13 @@ Sub PanPop (mlayout As String, hc As Int, wc As Int) '( mlayout=your .bal file, 
 	mh2=PanelMain.Height
 	mw2=PanelMain.Width
 	pnlSelect.AddView (pnlInput, mw1, mh1, mw2, mh2)
+	'Jalankan Job4 disini
 	
-	Label1.Text="Name: Jesi Namora"
+	
+	
+	
+	
+	
 End Sub
 
 Sub Select_Click ' Stop clicks on Select panel getting to panel underneath

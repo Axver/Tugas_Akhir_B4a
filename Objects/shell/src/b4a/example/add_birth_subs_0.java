@@ -137,8 +137,8 @@ add_birth.mostCurrent._edittext4 = RemoteObject.createNew ("anywheresoftware.b4a
 add_birth.mostCurrent._edittext5 = RemoteObject.createNew ("anywheresoftware.b4a.objects.EditTextWrapper");
  //BA.debugLineNum = 22;BA.debugLine="Private Button1 As Button";
 add_birth.mostCurrent._button1 = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");
- //BA.debugLineNum = 23;BA.debugLine="domain=\"http://a56cb1fd.ngrok.io/\"";
-add_birth.mostCurrent._domain = BA.ObjectToString("http://a56cb1fd.ngrok.io/");
+ //BA.debugLineNum = 23;BA.debugLine="domain=\"https://b9312448.ngrok.io/\"";
+add_birth.mostCurrent._domain = BA.ObjectToString("https://b9312448.ngrok.io/");
  //BA.debugLineNum = 24;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }

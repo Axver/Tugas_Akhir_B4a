@@ -441,43 +441,43 @@ add_outcome,process_globals,0,1,6,10
 
 
 
-family_card,activity_create,1,0,37,44
+family_card,activity_create,1,0,43,50
 ,button1,,edittext1,,label1,,label10,,label11,,label12,,label2,,label3,,label4,,label5,,listview1,,panelmain
 ,button1,,edittext1,,label1,,label10,,label11,,label12,,label2,,label3,,label4,,label5,,listview1,,panelmain
 
-family_card,activity_pause,0,0,52,54
+family_card,activity_pause,0,0,58,60
 
 
 
-family_card,activity_resume,0,0,46,50
+family_card,activity_resume,0,0,52,56
 ,job2,,domain
 
 
-family_card,button1_click,0,0,109,128
+family_card,button1_click,0,0,132,151
 ,edittext1,,job2,,domain,,listview1
 
 
-family_card,globals,0,1,12,35
+family_card,globals,0,1,12,41
 ,domain
 ,domain
 
-family_card,jobdone,0,1,56,104
-,label10,,label11,,listview1,,label12
+family_card,jobdone,0,1,62,127
+,label10,,label11,,listview1,,citizen_name_g,,gender_g,,phone_g,,status_g,,label12
+,citizen_name_g,,gender_g,,phone_g,,status_g
 
-
-family_card,listview1_itemclick,1,0,131,135
-,button1,,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2,,label1
+family_card,listview1_itemclick,1,1,154,167
+,button1,,job2,,domain,,label1,,citizen_name_g,,label2,,phone_g,,label3,,gender_g,,label4,,status_g,,label5,,clan_g,,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2
 ,mh1,,mw1,,mh2,,mw2
 ,panpop
-family_card,panpop,1,0,137,153
-,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2,,label1
+family_card,panpop,1,1,169,190
+,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2
 ,mh1,,mw1,,mh2,,mw2
 
 family_card,process_globals,0,1,6,10
 
 
 
-family_card,select_click,0,0,155,159
+family_card,select_click,0,0,192,196
 ,pnlselect,,button1
 
 

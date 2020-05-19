@@ -21,7 +21,7 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="http://a56cb1fd.ngrok.io/"
+	domain="https://b9312448.ngrok.io/"
 	
 	Dim SV As ScrollView
 	Dim Header As Panel

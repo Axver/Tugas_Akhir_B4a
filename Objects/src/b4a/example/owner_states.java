@@ -361,28 +361,28 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="owner_states";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=11403264;
- //BA.debugLineNum = 11403264;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=11403268;
- //BA.debugLineNum = 11403268;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11599872;
+ //BA.debugLineNum = 11599872;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=11599876;
+ //BA.debugLineNum = 11599876;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="owner_states";
-RDebugUtils.currentLine=11534336;
- //BA.debugLineNum = 11534336;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=11534338;
- //BA.debugLineNum = 11534338;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11730944;
+ //BA.debugLineNum = 11730944;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=11730946;
+ //BA.debugLineNum = 11730946;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="owner_states";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=11468800;
- //BA.debugLineNum = 11468800;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=11468802;
- //BA.debugLineNum = 11468802;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11665408;
+ //BA.debugLineNum = 11665408;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=11665410;
+ //BA.debugLineNum = 11665410;BA.debugLine="End Sub";
 return "";
 }
 }
