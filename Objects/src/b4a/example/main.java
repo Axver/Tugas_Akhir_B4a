@@ -33,7 +33,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,23 +328,20 @@ public class main extends Activity implements B4AActivity{
             
     }
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
-public b4a.example.starter _starter = null;
-public b4a.example.dashboard _dashboard = null;
-public b4a.example.birth _birth = null;
-public b4a.example.add_birth _add_birth = null;
-public b4a.example.mortality _mortality = null;
-public b4a.example.add_mortality _add_mortality = null;
-public b4a.example.outcome _outcome = null;
-public b4a.example.add_outcome _add_outcome = null;
-public b4a.example.family_card _family_card = null;
-public b4a.example.citizen _citizen = null;
-public b4a.example.owner_states _owner_states = null;
-public b4a.example.owners _owners = null;
-public b4a.example.lands _lands = null;
-public b4a.example.lands_id _lands_id = null;
 
+
+public static void initializeProcessGlobals() {
+    
+    if (main.processGlobalsRun == false) {
+	    main.processGlobalsRun = true;
+		try {
+		        anywheresoftware.b4a.samples.httputils2.httputils2service._process_globals();
+		
+        } catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+    }
+}
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
@@ -357,70 +354,305 @@ vis = vis | (outcome.mostCurrent != null);
 vis = vis | (add_outcome.mostCurrent != null);
 vis = vis | (family_card.mostCurrent != null);
 vis = vis | (citizen.mostCurrent != null);
+vis = vis | (lands_id.mostCurrent != null);
+vis = vis | (lands.mostCurrent != null);
+vis = vis | (land_by_owner.mostCurrent != null);
+vis = vis | (building_id.mostCurrent != null);
+vis = vis | (building_owner.mostCurrent != null);
+vis = vis | (buildings.mostCurrent != null);
 vis = vis | (owner_states.mostCurrent != null);
 vis = vis | (owners.mostCurrent != null);
-vis = vis | (lands.mostCurrent != null);
-vis = vis | (lands_id.mostCurrent != null);
 return vis;}
+
+private static BA killProgramHelper(BA ba) {
+    if (ba == null)
+        return null;
+    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
+    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
+        return null;
+    return sharedProcessBA.activityBA.get();
+}
+public static void killProgram() {
+     {
+            Activity __a = null;
+            if (main.previousOne != null) {
+				__a = main.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+ {
+            Activity __a = null;
+            if (dashboard.previousOne != null) {
+				__a = dashboard.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(dashboard.mostCurrent == null ? null : dashboard.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (birth.previousOne != null) {
+				__a = birth.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(birth.mostCurrent == null ? null : birth.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (add_birth.previousOne != null) {
+				__a = add_birth.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(add_birth.mostCurrent == null ? null : add_birth.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (mortality.previousOne != null) {
+				__a = mortality.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(mortality.mostCurrent == null ? null : mortality.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (add_mortality.previousOne != null) {
+				__a = add_mortality.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(add_mortality.mostCurrent == null ? null : add_mortality.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (outcome.previousOne != null) {
+				__a = outcome.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(outcome.mostCurrent == null ? null : outcome.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (add_outcome.previousOne != null) {
+				__a = add_outcome.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(add_outcome.mostCurrent == null ? null : add_outcome.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (family_card.previousOne != null) {
+				__a = family_card.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(family_card.mostCurrent == null ? null : family_card.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (citizen.previousOne != null) {
+				__a = citizen.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(citizen.mostCurrent == null ? null : citizen.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (lands_id.previousOne != null) {
+				__a = lands_id.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(lands_id.mostCurrent == null ? null : lands_id.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (lands.previousOne != null) {
+				__a = lands.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(lands.mostCurrent == null ? null : lands.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (land_by_owner.previousOne != null) {
+				__a = land_by_owner.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(land_by_owner.mostCurrent == null ? null : land_by_owner.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (building_id.previousOne != null) {
+				__a = building_id.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(building_id.mostCurrent == null ? null : building_id.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (building_owner.previousOne != null) {
+				__a = building_owner.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(building_owner.mostCurrent == null ? null : building_owner.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (buildings.previousOne != null) {
+				__a = buildings.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(buildings.mostCurrent == null ? null : buildings.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (owner_states.previousOne != null) {
+				__a = owner_states.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(owner_states.mostCurrent == null ? null : owner_states.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (owners.previousOne != null) {
+				__a = owners.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(owners.mostCurrent == null ? null : owners.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+}
+public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
+public b4a.example.starter _starter = null;
+public b4a.example.dashboard _dashboard = null;
+public b4a.example.birth _birth = null;
+public b4a.example.add_birth _add_birth = null;
+public b4a.example.mortality _mortality = null;
+public b4a.example.add_mortality _add_mortality = null;
+public b4a.example.outcome _outcome = null;
+public b4a.example.add_outcome _add_outcome = null;
+public b4a.example.family_card _family_card = null;
+public b4a.example.citizen _citizen = null;
+public b4a.example.lands_id _lands_id = null;
+public b4a.example.lands _lands = null;
+public b4a.example.land_by_owner _land_by_owner = null;
+public b4a.example.building_id _building_id = null;
+public b4a.example.building_owner _building_owner = null;
+public b4a.example.buildings _buildings = null;
+public b4a.example.owner_states _owner_states = null;
+public b4a.example.owners _owners = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 30;BA.debugLine="Activity.LoadLayout(\"login\")";
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=131072;
+ //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=131074;
+ //BA.debugLineNum = 131074;BA.debugLine="Activity.LoadLayout(\"login\")";
 mostCurrent._activity.LoadLayout("login",mostCurrent.activityBA);
- //BA.debugLineNum = 32;BA.debugLine="End Sub";
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 40;BA.debugLine="End Sub";
+RDebugUtils.currentModule="main";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 34;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 44;BA.debugLine="StartActivity(\"dashboard\")";
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
+RDebugUtils.currentLine=327680;
+ //BA.debugLineNum = 327680;BA.debugLine="Sub Button1_Click";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="StartActivity(\"dashboard\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("dashboard"));
- //BA.debugLineNum = 45;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 22;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
-return "";
-}
-
-public static void initializeProcessGlobals() {
-    
-    if (main.processGlobalsRun == false) {
-	    main.processGlobalsRun = true;
-		try {
-		        anywheresoftware.b4a.samples.httputils2.httputils2service._process_globals();
-main._process_globals();
-starter._process_globals();
-dashboard._process_globals();
-birth._process_globals();
-add_birth._process_globals();
-mortality._process_globals();
-add_mortality._process_globals();
-outcome._process_globals();
-add_outcome._process_globals();
-family_card._process_globals();
-citizen._process_globals();
-owner_states._process_globals();
-owners._process_globals();
-lands._process_globals();
-lands_id._process_globals();
-		
-        } catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-    }
-}public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 16;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 20;BA.debugLine="End Sub";
+RDebugUtils.currentLine=327682;
+ //BA.debugLineNum = 327682;BA.debugLine="End Sub";
 return "";
 }
 }

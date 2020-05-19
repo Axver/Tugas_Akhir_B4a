@@ -26,7 +26,7 @@ Sub Globals
 	Private EditText4 As EditText
 	Private EditText5 As EditText
 	Private Button1 As Button
-	domain="http://3f86ea95.ngrok.io/"
+	domain="http://a56cb1fd.ngrok.io/"
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)

@@ -33,7 +33,7 @@ public class citizen extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.citizen");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.citizen");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,6 +328,15 @@ public class citizen extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static String _domain = "";
 public anywheresoftware.b4a.samples.httputils2.httpjob _job2 = null;
@@ -348,87 +357,121 @@ public b4a.example.add_mortality _add_mortality = null;
 public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.family_card _family_card = null;
+public b4a.example.lands_id _lands_id = null;
+public b4a.example.lands _lands = null;
+public b4a.example.land_by_owner _land_by_owner = null;
+public b4a.example.building_id _building_id = null;
+public b4a.example.building_owner _building_owner = null;
+public b4a.example.buildings _buildings = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
-public b4a.example.lands _lands = null;
-public b4a.example.lands_id _lands_id = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 31;BA.debugLine="Activity.LoadLayout(\"citizen\")";
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=7798784;
+ //BA.debugLineNum = 7798784;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=7798786;
+ //BA.debugLineNum = 7798786;BA.debugLine="Activity.LoadLayout(\"citizen\")";
 mostCurrent._activity.LoadLayout("citizen",mostCurrent.activityBA);
- //BA.debugLineNum = 32;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+RDebugUtils.currentLine=7798787;
+ //BA.debugLineNum = 7798787;BA.debugLine="job2.Initialize(\"Job2\", Me)";
 mostCurrent._job2._initialize(processBA,"Job2",citizen.getObject());
- //BA.debugLineNum = 33;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
+RDebugUtils.currentLine=7798788;
+ //BA.debugLineNum = 7798788;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countFcn.php","send=test"+"&data=test");
- //BA.debugLineNum = 34;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=7798789;
+ //BA.debugLineNum = 7798789;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
- //BA.debugLineNum = 36;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7798791;
+ //BA.debugLineNum = 7798791;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 44;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 46;BA.debugLine="End Sub";
+RDebugUtils.currentModule="citizen";
+RDebugUtils.currentLine=7929856;
+ //BA.debugLineNum = 7929856;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=7929858;
+ //BA.debugLineNum = 7929858;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 38;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 39;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=7864320;
+ //BA.debugLineNum = 7864320;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=7864321;
+ //BA.debugLineNum = 7864321;BA.debugLine="job2.Initialize(\"Job2\", Me)";
 mostCurrent._job2._initialize(processBA,"Job2",citizen.getObject());
- //BA.debugLineNum = 40;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
+RDebugUtils.currentLine=7864322;
+ //BA.debugLineNum = 7864322;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/countFcn.p";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/countFcn.php","send=test"+"&data=test");
- //BA.debugLineNum = 41;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=7864323;
+ //BA.debugLineNum = 7864323;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
- //BA.debugLineNum = 42;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7864324;
+ //BA.debugLineNum = 7864324;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
 String _citizen_id = "";
- //BA.debugLineNum = 112;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 113;BA.debugLine="Dim citizen_id As String";
+int _size = 0;
+int _x = 0;
+RDebugUtils.currentLine=8060928;
+ //BA.debugLineNum = 8060928;BA.debugLine="Sub Button1_Click";
+RDebugUtils.currentLine=8060929;
+ //BA.debugLineNum = 8060929;BA.debugLine="Dim citizen_id As String";
 _citizen_id = "";
- //BA.debugLineNum = 114;BA.debugLine="citizen_id=EditText1.Text";
+RDebugUtils.currentLine=8060930;
+ //BA.debugLineNum = 8060930;BA.debugLine="citizen_id=EditText1.Text";
 _citizen_id = mostCurrent._edittext1.getText();
- //BA.debugLineNum = 116;BA.debugLine="job2.Initialize(\"Job3\", Me)";
+RDebugUtils.currentLine=8060932;
+ //BA.debugLineNum = 8060932;BA.debugLine="job2.Initialize(\"Job3\", Me)";
 mostCurrent._job2._initialize(processBA,"Job3",citizen.getObject());
- //BA.debugLineNum = 117;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/citizen_se";
+RDebugUtils.currentLine=8060933;
+ //BA.debugLineNum = 8060933;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/citizen_se";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/citizen_search.php","citizen_id="+_citizen_id);
- //BA.debugLineNum = 118;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=8060934;
+ //BA.debugLineNum = 8060934;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
- //BA.debugLineNum = 119;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 16;BA.debugLine="Dim domain As String";
-mostCurrent._domain = "";
- //BA.debugLineNum = 17;BA.debugLine="Dim job2 As HttpJob";
-mostCurrent._job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
- //BA.debugLineNum = 19;BA.debugLine="domain=\"http://3f86ea95.ngrok.io/\"";
-mostCurrent._domain = "http://3f86ea95.ngrok.io/";
- //BA.debugLineNum = 21;BA.debugLine="Private Label10 As Label";
-mostCurrent._label10 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private Label11 As Label";
-mostCurrent._label11 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private EditText1 As EditText";
-mostCurrent._edittext1 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private ListView1 As ListView";
-mostCurrent._listview1 = new anywheresoftware.b4a.objects.ListViewWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private Label12 As Label";
-mostCurrent._label12 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 26;BA.debugLine="Private ScrollView1 As ScrollView";
-mostCurrent._scrollview1 = new anywheresoftware.b4a.objects.ScrollViewWrapper();
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8060935;
+ //BA.debugLineNum = 8060935;BA.debugLine="Dim Size As Int";
+_size = 0;
+RDebugUtils.currentLine=8060936;
+ //BA.debugLineNum = 8060936;BA.debugLine="Size=ListView1.Size";
+_size = mostCurrent._listview1.getSize();
+RDebugUtils.currentLine=8060937;
+ //BA.debugLineNum = 8060937;BA.debugLine="Log(\"Jumlah Data: \" & Size)";
+anywheresoftware.b4a.keywords.Common.Log("Jumlah Data: "+BA.NumberToString(_size));
+RDebugUtils.currentLine=8060939;
+ //BA.debugLineNum = 8060939;BA.debugLine="For x= Size To 0 Step -1";
+{
+final int step9 = -1;
+final int limit9 = (int) (0);
+_x = _size ;
+for (;_x >= limit9 ;_x = _x + step9 ) {
+RDebugUtils.currentLine=8060940;
+ //BA.debugLineNum = 8060940;BA.debugLine="If x==0 Then";
+if (_x==0) { 
+ }else {
+RDebugUtils.currentLine=8060943;
+ //BA.debugLineNum = 8060943;BA.debugLine="ListView1.RemoveAt(x-1)";
+mostCurrent._listview1.RemoveAt((int) (_x-1));
+ };
+ }
+};
+RDebugUtils.currentLine=8060946;
+ //BA.debugLineNum = 8060946;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job) throws Exception{
+RDebugUtils.currentModule="citizen";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "jobdone"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "jobdone", new Object[] {_job}));}
 anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
 anywheresoftware.b4a.objects.collections.Map _root = null;
 anywheresoftware.b4a.objects.collections.List _features = null;
@@ -444,27 +487,37 @@ String _gender = "";
 String _phone = "";
 String _cs_name = "";
 String _born_date = "";
- //BA.debugLineNum = 48;BA.debugLine="Sub JobDone (Job As HttpJob)";
- //BA.debugLineNum = 50;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+RDebugUtils.currentLine=7995392;
+ //BA.debugLineNum = 7995392;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=7995394;
+ //BA.debugLineNum = 7995394;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
 anywheresoftware.b4a.keywords.Common.Log("JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success));
- //BA.debugLineNum = 51;BA.debugLine="If Job.Success = True Then";
+RDebugUtils.currentLine=7995395;
+ //BA.debugLineNum = 7995395;BA.debugLine="If Job.Success = True Then";
 if (_job._success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 52;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=7995396;
+ //BA.debugLineNum = 7995396;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 54;BA.debugLine="Select Job.JobName";
+RDebugUtils.currentLine=7995398;
+ //BA.debugLineNum = 7995398;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"Job2","Job3")) {
 case 0: {
- //BA.debugLineNum = 56;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=7995400;
+ //BA.debugLineNum = 7995400;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 57;BA.debugLine="parser.Initialize(Job.GetString)";
+RDebugUtils.currentLine=7995401;
+ //BA.debugLineNum = 7995401;BA.debugLine="parser.Initialize(Job.GetString)";
 _parser.Initialize(_job._getstring());
- //BA.debugLineNum = 58;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=7995402;
+ //BA.debugLineNum = 7995402;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 59;BA.debugLine="Dim features As List = root.Get(\"features\")";
+RDebugUtils.currentLine=7995403;
+ //BA.debugLineNum = 7995403;BA.debugLine="Dim features As List = root.Get(\"features\")";
 _features = new anywheresoftware.b4a.objects.collections.List();
 _features.setObject((java.util.List)(_root.Get((Object)("features"))));
- //BA.debugLineNum = 60;BA.debugLine="For Each colfeatures As Map In features";
+RDebugUtils.currentLine=7995404;
+ //BA.debugLineNum = 7995404;BA.debugLine="For Each colfeatures As Map In features";
 _colfeatures = new anywheresoftware.b4a.objects.collections.Map();
 {
 final anywheresoftware.b4a.BA.IterableList group10 = _features;
@@ -473,94 +526,126 @@ final int groupLen10 = group10.getSize()
 ;
 for (; index10 < groupLen10;index10++){
 _colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group10.Get(index10)));
- //BA.debugLineNum = 61;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+RDebugUtils.currentLine=7995405;
+ //BA.debugLineNum = 7995405;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
 _properties = new anywheresoftware.b4a.objects.collections.Map();
 _properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
- //BA.debugLineNum = 62;BA.debugLine="Dim fcn As String = properties.Get(\"fcn\")";
+RDebugUtils.currentLine=7995406;
+ //BA.debugLineNum = 7995406;BA.debugLine="Dim fcn As String = properties.Get(\"fcn\")";
 _fcn = BA.ObjectToString(_properties.Get((Object)("fcn")));
- //BA.debugLineNum = 63;BA.debugLine="Dim fcc As String = properties.Get(\"fcc\")";
+RDebugUtils.currentLine=7995407;
+ //BA.debugLineNum = 7995407;BA.debugLine="Dim fcc As String = properties.Get(\"fcc\")";
 _fcc = BA.ObjectToString(_properties.Get((Object)("fcc")));
- //BA.debugLineNum = 65;BA.debugLine="Label10.Text=fcn";
+RDebugUtils.currentLine=7995409;
+ //BA.debugLineNum = 7995409;BA.debugLine="Label10.Text=fcn";
 mostCurrent._label10.setText(BA.ObjectToCharSequence(_fcn));
- //BA.debugLineNum = 66;BA.debugLine="Label11.Text=fcc";
+RDebugUtils.currentLine=7995410;
+ //BA.debugLineNum = 7995410;BA.debugLine="Label11.Text=fcc";
 mostCurrent._label11.setText(BA.ObjectToCharSequence(_fcc));
  }
 };
+RDebugUtils.currentLine=7995412;
+ //BA.debugLineNum = 7995412;BA.debugLine="Job.Release";
+_job._release();
  break; }
 case 1: {
- //BA.debugLineNum = 69;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=7995414;
+ //BA.debugLineNum = 7995414;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 70;BA.debugLine="parser.Initialize(Job.GetString)";
+RDebugUtils.currentLine=7995415;
+ //BA.debugLineNum = 7995415;BA.debugLine="parser.Initialize(Job.GetString)";
 _parser.Initialize(_job._getstring());
- //BA.debugLineNum = 71;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=7995416;
+ //BA.debugLineNum = 7995416;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 72;BA.debugLine="Dim features As List = root.Get(\"features\")";
+RDebugUtils.currentLine=7995417;
+ //BA.debugLineNum = 7995417;BA.debugLine="Dim features As List = root.Get(\"features\")";
 _features = new anywheresoftware.b4a.objects.collections.List();
 _features.setObject((java.util.List)(_root.Get((Object)("features"))));
- //BA.debugLineNum = 73;BA.debugLine="For Each colfeatures As Map In features";
+RDebugUtils.currentLine=7995418;
+ //BA.debugLineNum = 7995418;BA.debugLine="For Each colfeatures As Map In features";
 _colfeatures = new anywheresoftware.b4a.objects.collections.Map();
 {
-final anywheresoftware.b4a.BA.IterableList group22 = _features;
-final int groupLen22 = group22.getSize()
-;int index22 = 0;
+final anywheresoftware.b4a.BA.IterableList group23 = _features;
+final int groupLen23 = group23.getSize()
+;int index23 = 0;
 ;
-for (; index22 < groupLen22;index22++){
-_colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group22.Get(index22)));
- //BA.debugLineNum = 74;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+for (; index23 < groupLen23;index23++){
+_colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group23.Get(index23)));
+RDebugUtils.currentLine=7995419;
+ //BA.debugLineNum = 7995419;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
 _properties = new anywheresoftware.b4a.objects.collections.Map();
 _properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
- //BA.debugLineNum = 75;BA.debugLine="Dim nik As String = properties.Get(\"nik\")";
+RDebugUtils.currentLine=7995420;
+ //BA.debugLineNum = 7995420;BA.debugLine="Dim nik As String = properties.Get(\"nik\")";
 _nik = BA.ObjectToString(_properties.Get((Object)("nik")));
- //BA.debugLineNum = 76;BA.debugLine="Dim clan_name As String = properties.Get(\"cla";
+RDebugUtils.currentLine=7995421;
+ //BA.debugLineNum = 7995421;BA.debugLine="Dim clan_name As String = properties.Get(\"cla";
 _clan_name = BA.ObjectToString(_properties.Get((Object)("clan_name")));
- //BA.debugLineNum = 77;BA.debugLine="Dim citizen_name As String = properties.Get(\"";
+RDebugUtils.currentLine=7995422;
+ //BA.debugLineNum = 7995422;BA.debugLine="Dim citizen_name As String = properties.Get(\"";
 _citizen_name = BA.ObjectToString(_properties.Get((Object)("citizen_name")));
- //BA.debugLineNum = 78;BA.debugLine="Dim address As String = properties.Get(\"addre";
+RDebugUtils.currentLine=7995423;
+ //BA.debugLineNum = 7995423;BA.debugLine="Dim address As String = properties.Get(\"addre";
 _address = BA.ObjectToString(_properties.Get((Object)("address")));
- //BA.debugLineNum = 79;BA.debugLine="Dim gender As String = properties.Get(\"gender";
+RDebugUtils.currentLine=7995424;
+ //BA.debugLineNum = 7995424;BA.debugLine="Dim gender As String = properties.Get(\"gender";
 _gender = BA.ObjectToString(_properties.Get((Object)("gender")));
- //BA.debugLineNum = 80;BA.debugLine="Dim phone As String = properties.Get(\"phone\")";
+RDebugUtils.currentLine=7995425;
+ //BA.debugLineNum = 7995425;BA.debugLine="Dim phone As String = properties.Get(\"phone\")";
 _phone = BA.ObjectToString(_properties.Get((Object)("phone")));
- //BA.debugLineNum = 81;BA.debugLine="Dim cs_name As String = properties.Get(\"cs_na";
+RDebugUtils.currentLine=7995426;
+ //BA.debugLineNum = 7995426;BA.debugLine="Dim cs_name As String = properties.Get(\"cs_na";
 _cs_name = BA.ObjectToString(_properties.Get((Object)("cs_name")));
- //BA.debugLineNum = 82;BA.debugLine="Dim born_date As String = properties.Get(\"bor";
+RDebugUtils.currentLine=7995427;
+ //BA.debugLineNum = 7995427;BA.debugLine="Dim born_date As String = properties.Get(\"bor";
 _born_date = BA.ObjectToString(_properties.Get((Object)("born_date")));
- //BA.debugLineNum = 84;BA.debugLine="ListView1.AddSingleLine(\"Citize Id:\"&nik)";
+RDebugUtils.currentLine=7995429;
+ //BA.debugLineNum = 7995429;BA.debugLine="ListView1.AddSingleLine(\"Citize Id:\"&nik)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citize Id:"+_nik));
- //BA.debugLineNum = 85;BA.debugLine="ListView1.AddSingleLine(\"Clan Name:\"&clan_nam";
+RDebugUtils.currentLine=7995430;
+ //BA.debugLineNum = 7995430;BA.debugLine="ListView1.AddSingleLine(\"Clan Name:\"&clan_nam";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Clan Name:"+_clan_name));
- //BA.debugLineNum = 86;BA.debugLine="ListView1.AddSingleLine(\"Citizen Name:\"&citiz";
+RDebugUtils.currentLine=7995431;
+ //BA.debugLineNum = 7995431;BA.debugLine="ListView1.AddSingleLine(\"Citizen Name:\"&citiz";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citizen Name:"+_citizen_name));
- //BA.debugLineNum = 87;BA.debugLine="ListView1.AddSingleLine(\"Address:\"&address)";
+RDebugUtils.currentLine=7995432;
+ //BA.debugLineNum = 7995432;BA.debugLine="ListView1.AddSingleLine(\"Address:\"&address)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Address:"+_address));
- //BA.debugLineNum = 88;BA.debugLine="ListView1.AddSingleLine(\"Phone:\"&phone)";
+RDebugUtils.currentLine=7995433;
+ //BA.debugLineNum = 7995433;BA.debugLine="ListView1.AddSingleLine(\"Phone:\"&phone)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Phone:"+_phone));
- //BA.debugLineNum = 89;BA.debugLine="ListView1.AddSingleLine(\"Gender:\"&gender)";
+RDebugUtils.currentLine=7995434;
+ //BA.debugLineNum = 7995434;BA.debugLine="ListView1.AddSingleLine(\"Gender:\"&gender)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Gender:"+_gender));
- //BA.debugLineNum = 90;BA.debugLine="ListView1.AddSingleLine(\"Citizen Status:\"&cs_";
+RDebugUtils.currentLine=7995435;
+ //BA.debugLineNum = 7995435;BA.debugLine="ListView1.AddSingleLine(\"Citizen Status:\"&cs_";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Citizen Status:"+_cs_name));
- //BA.debugLineNum = 91;BA.debugLine="ListView1.AddSingleLine(\"Born Date:\"&born_dat";
+RDebugUtils.currentLine=7995436;
+ //BA.debugLineNum = 7995436;BA.debugLine="ListView1.AddSingleLine(\"Born Date:\"&born_dat";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Born Date:"+_born_date));
  }
 };
+RDebugUtils.currentLine=7995445;
+ //BA.debugLineNum = 7995445;BA.debugLine="Job.Release";
+_job._release();
  break; }
 }
 ;
  }else {
- //BA.debugLineNum = 103;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+RDebugUtils.currentLine=7995448;
+ //BA.debugLineNum = 7995448;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
- //BA.debugLineNum = 104;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+RDebugUtils.currentLine=7995449;
+ //BA.debugLineNum = 7995449;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
- };
- //BA.debugLineNum = 106;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=7995450;
+ //BA.debugLineNum = 7995450;BA.debugLine="Job.Release";
 _job._release();
- //BA.debugLineNum = 107;BA.debugLine="End Sub";
-return "";
-}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+ };
+RDebugUtils.currentLine=7995453;
+ //BA.debugLineNum = 7995453;BA.debugLine="End Sub";
 return "";
 }
 }

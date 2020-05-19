@@ -33,7 +33,7 @@ public class add_outcome extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.add_outcome");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.add_outcome");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,6 +328,15 @@ public class add_outcome extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static String _domain = "";
 public anywheresoftware.b4a.samples.httputils2.httpjob _job2 = null;
@@ -348,139 +357,164 @@ public b4a.example.add_mortality _add_mortality = null;
 public b4a.example.outcome _outcome = null;
 public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
+public b4a.example.lands_id _lands_id = null;
+public b4a.example.lands _lands = null;
+public b4a.example.land_by_owner _land_by_owner = null;
+public b4a.example.building_id _building_id = null;
+public b4a.example.building_owner _building_owner = null;
+public b4a.example.buildings _buildings = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
-public b4a.example.lands _lands = null;
-public b4a.example.lands_id _lands_id = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 26;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 28;BA.debugLine="Activity.LoadLayout(\"add_outcome\")";
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=6750208;
+ //BA.debugLineNum = 6750208;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=6750210;
+ //BA.debugLineNum = 6750210;BA.debugLine="Activity.LoadLayout(\"add_outcome\")";
 mostCurrent._activity.LoadLayout("add_outcome",mostCurrent.activityBA);
- //BA.debugLineNum = 30;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6750212;
+ //BA.debugLineNum = 6750212;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 36;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 38;BA.debugLine="End Sub";
+RDebugUtils.currentModule="add_outcome";
+RDebugUtils.currentLine=6881280;
+ //BA.debugLineNum = 6881280;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=6881282;
+ //BA.debugLineNum = 6881282;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 32;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 34;BA.debugLine="End Sub";
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=6815744;
+ //BA.debugLineNum = 6815744;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=6815746;
+ //BA.debugLineNum = 6815746;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
 String _citizen_id = "";
 String _from = "";
 String _destination = "";
 String _status = "";
- //BA.debugLineNum = 41;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 43;BA.debugLine="Dim citizen_id As String";
+RDebugUtils.currentLine=6946816;
+ //BA.debugLineNum = 6946816;BA.debugLine="Sub Button1_Click";
+RDebugUtils.currentLine=6946818;
+ //BA.debugLineNum = 6946818;BA.debugLine="Dim citizen_id As String";
 _citizen_id = "";
- //BA.debugLineNum = 44;BA.debugLine="Dim from As String";
+RDebugUtils.currentLine=6946819;
+ //BA.debugLineNum = 6946819;BA.debugLine="Dim from As String";
 _from = "";
- //BA.debugLineNum = 45;BA.debugLine="Dim destination As String";
+RDebugUtils.currentLine=6946820;
+ //BA.debugLineNum = 6946820;BA.debugLine="Dim destination As String";
 _destination = "";
- //BA.debugLineNum = 46;BA.debugLine="Dim status As String";
+RDebugUtils.currentLine=6946821;
+ //BA.debugLineNum = 6946821;BA.debugLine="Dim status As String";
 _status = "";
- //BA.debugLineNum = 48;BA.debugLine="citizen_id=EditText1.Text";
+RDebugUtils.currentLine=6946823;
+ //BA.debugLineNum = 6946823;BA.debugLine="citizen_id=EditText1.Text";
 _citizen_id = mostCurrent._edittext1.getText();
- //BA.debugLineNum = 49;BA.debugLine="from=EditText2.Text";
+RDebugUtils.currentLine=6946824;
+ //BA.debugLineNum = 6946824;BA.debugLine="from=EditText2.Text";
 _from = mostCurrent._edittext2.getText();
- //BA.debugLineNum = 50;BA.debugLine="destination=EditText3.Text";
+RDebugUtils.currentLine=6946825;
+ //BA.debugLineNum = 6946825;BA.debugLine="destination=EditText3.Text";
 _destination = mostCurrent._edittext3.getText();
- //BA.debugLineNum = 51;BA.debugLine="status=EditText4.Text";
+RDebugUtils.currentLine=6946826;
+ //BA.debugLineNum = 6946826;BA.debugLine="status=EditText4.Text";
 _status = mostCurrent._edittext4.getText();
- //BA.debugLineNum = 54;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+RDebugUtils.currentLine=6946829;
+ //BA.debugLineNum = 6946829;BA.debugLine="job2.Initialize(\"Job2\", Me)";
 mostCurrent._job2._initialize(processBA,"Job2",add_outcome.getObject());
- //BA.debugLineNum = 55;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/addOutcome";
+RDebugUtils.currentLine=6946830;
+ //BA.debugLineNum = 6946830;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/addOutcome";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/addOutcome.php","citizen_id="+_citizen_id+"&from="+_from+"&destination="+_destination+"&status="+_status);
- //BA.debugLineNum = 56;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=6946831;
+ //BA.debugLineNum = 6946831;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
- //BA.debugLineNum = 57;BA.debugLine="End Sub";
+RDebugUtils.currentLine=6946832;
+ //BA.debugLineNum = 6946832;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button3_click() throws Exception{
- //BA.debugLineNum = 95;BA.debugLine="Sub Button3_Click";
- //BA.debugLineNum = 97;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Dim domain As String";
-mostCurrent._domain = "";
- //BA.debugLineNum = 16;BA.debugLine="Dim job2 As HttpJob";
-mostCurrent._job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
- //BA.debugLineNum = 17;BA.debugLine="Private EditText1 As EditText";
-mostCurrent._edittext1 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private EditText2 As EditText";
-mostCurrent._edittext2 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private EditText3 As EditText";
-mostCurrent._edittext3 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private EditText4 As EditText";
-mostCurrent._edittext4 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Private EditText5 As EditText";
-mostCurrent._edittext5 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private Button1 As Button";
-mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 23;BA.debugLine="domain=\"http://3f86ea95.ngrok.io/\"";
-mostCurrent._domain = "http://3f86ea95.ngrok.io/";
- //BA.debugLineNum = 24;BA.debugLine="End Sub";
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "button3_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button3_click", null));}
+RDebugUtils.currentLine=7143424;
+ //BA.debugLineNum = 7143424;BA.debugLine="Sub Button3_Click";
+RDebugUtils.currentLine=7143426;
+ //BA.debugLineNum = 7143426;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job) throws Exception{
- //BA.debugLineNum = 59;BA.debugLine="Sub JobDone (Job As HttpJob)";
- //BA.debugLineNum = 61;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "jobdone"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "jobdone", new Object[] {_job}));}
+RDebugUtils.currentLine=7012352;
+ //BA.debugLineNum = 7012352;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=7012354;
+ //BA.debugLineNum = 7012354;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
 anywheresoftware.b4a.keywords.Common.Log("JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success));
- //BA.debugLineNum = 62;BA.debugLine="If Job.Success = True Then";
+RDebugUtils.currentLine=7012355;
+ //BA.debugLineNum = 7012355;BA.debugLine="If Job.Success = True Then";
 if (_job._success==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 65;BA.debugLine="Select Job.JobName";
+RDebugUtils.currentLine=7012358;
+ //BA.debugLineNum = 7012358;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"Job2")) {
 case 0: {
- //BA.debugLineNum = 68;BA.debugLine="Log(Job.GetString)";
+RDebugUtils.currentLine=7012361;
+ //BA.debugLineNum = 7012361;BA.debugLine="Log(Job.GetString)";
 anywheresoftware.b4a.keywords.Common.Log(_job._getstring());
- //BA.debugLineNum = 69;BA.debugLine="If Job.GetString=\"Success\" Then";
+RDebugUtils.currentLine=7012362;
+ //BA.debugLineNum = 7012362;BA.debugLine="If Job.GetString=\"Success\" Then";
 if ((_job._getstring()).equals("Success")) { 
- //BA.debugLineNum = 70;BA.debugLine="StartActivity(\"outcome\")";
+RDebugUtils.currentLine=7012363;
+ //BA.debugLineNum = 7012363;BA.debugLine="StartActivity(\"outcome\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("outcome"));
  }else {
- //BA.debugLineNum = 72;BA.debugLine="Log(\"Failed To Input Data\")";
+RDebugUtils.currentLine=7012365;
+ //BA.debugLineNum = 7012365;BA.debugLine="Log(\"Failed To Input Data\")";
 anywheresoftware.b4a.keywords.Common.Log("Failed To Input Data");
  };
- //BA.debugLineNum = 79;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=7012372;
+ //BA.debugLineNum = 7012372;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  break; }
 }
 ;
  }else {
- //BA.debugLineNum = 84;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+RDebugUtils.currentLine=7012377;
+ //BA.debugLineNum = 7012377;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
- //BA.debugLineNum = 85;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+RDebugUtils.currentLine=7012378;
+ //BA.debugLineNum = 7012378;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 87;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=7012380;
+ //BA.debugLineNum = 7012380;BA.debugLine="Job.Release";
 _job._release();
- //BA.debugLineNum = 88;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7012381;
+ //BA.debugLineNum = 7012381;BA.debugLine="End Sub";
 return "";
 }
 public static String  _label3_click() throws Exception{
- //BA.debugLineNum = 91;BA.debugLine="Sub Label3_Click";
- //BA.debugLineNum = 92;BA.debugLine="StartActivity(\"dashboard\")";
+RDebugUtils.currentModule="add_outcome";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "label3_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "label3_click", null));}
+RDebugUtils.currentLine=7077888;
+ //BA.debugLineNum = 7077888;BA.debugLine="Sub Label3_Click";
+RDebugUtils.currentLine=7077889;
+ //BA.debugLineNum = 7077889;BA.debugLine="StartActivity(\"dashboard\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("dashboard"));
- //BA.debugLineNum = 93;BA.debugLine="End Sub";
-return "";
-}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7077890;
+ //BA.debugLineNum = 7077890;BA.debugLine="End Sub";
 return "";
 }
 }

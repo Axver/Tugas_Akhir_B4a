@@ -23,7 +23,7 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://3f86ea95.ngrok.io/"
+	domain="http://34d0b8ce.ngrok.io/"
 	Private EditText1 As EditText
 	Private ListView1 As ListView
 End Sub
@@ -53,14 +53,15 @@ End Sub
 
 
 Sub Button1_Click
-	Dim tax_number As String
-	tax_number= EditText1.Text
+	Dim land_id As String
+	land_id= EditText1.Text
 	
-	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/land_tax_view.php?tax_number="&tax_number)
+	'WebView1.LoadUrl(domain&"ta_v2/endpoint/view/land_tax_view.php?tax_number="&tax_number)
 	ProgressDialogShow("Loading...")
 	
 	job2.Initialize("Job2", Me)
-	job2.PostString(domain&"ta_v2/endpoint/land_tax.php", "tax_number="&tax_number)
+	job2.PostString(domain&"ta_v2/endpoint/land.php", "land_id="&land_id)
+	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/land_id.php?land_id="&land_id)
 	ProgressDialogShow("Loading...")
 End Sub
 
@@ -102,19 +103,12 @@ Sub JobDone (Job As HttpJob)
 					Dim land_id As String = properties.Get("land_id")
 					Dim born_date As String = properties.Get("born_date")
 					
-					
-					ListView1.AddSingleLine("Information")
 					ListView1.SingleLineLayout.Label.TextSize = 12
 					ListView1.SingleLineLayout.Label.TextColor = Colors.Black
+					ListView1.AddSingleLine("History")
 					ListView1.AddSingleLine("Clan Name:"&clan_name)
 					ListView1.AddSingleLine("Owner Name:"&owner_name)
 					ListView1.AddSingleLine("Gender:"&gender)
-					ListView1.AddSingleLine("Land Owner:"&land_owner)
-					ListView1.AddSingleLine("Phone:"&phone)
-					ListView1.AddSingleLine("Tax Number:"&tax_number)
-					ListView1.AddSingleLine("Status:"&status_name)
-					ListView1.AddSingleLine("Land Id:"&land_id)
-					ListView1.AddSingleLine("Coordinates:"&x&"||"&y)
 				Next
 				Dim Type As String = root.Get("type")
 				

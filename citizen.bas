@@ -22,7 +22,7 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://3f86ea95.ngrok.io/"
+	domain="http://a56cb1fd.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label
@@ -71,6 +71,7 @@ Sub JobDone (Job As HttpJob)
 					Label10.Text=fcn
 					Label11.Text=fcc
 				Next
+				Job.Release
 			Case "Job3"
 				Dim parser As JSONParser
 				parser.Initialize(Job.GetString)
@@ -103,13 +104,14 @@ Sub JobDone (Job As HttpJob)
 				
 
 
-			
+				Job.Release
 		End Select
 	Else
 		Log("Error: " & Job.ErrorMessage)
 		ToastMessageShow("Error: " & Job.ErrorMessage, True)
+		Job.Release
 	End If
-	Job.Release
+	
 End Sub
 
 
@@ -122,4 +124,15 @@ Sub Button1_Click
 	job2.Initialize("Job3", Me)
 	job2.PostString(domain&"ta_v2/endpoint/citizen_search.php", "citizen_id="&citizen_id)
 	ProgressDialogShow("Loading...")
+	Dim Size As Int
+	Size=ListView1.Size
+	Log("Jumlah Data: " & Size)
+	
+	For x= Size To 0 Step -1
+		If x==0 Then
+			
+		Else
+			ListView1.RemoveAt(x-1)
+		End If
+	Next
 End Sub

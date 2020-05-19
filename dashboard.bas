@@ -20,7 +20,7 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="http://3f86ea95.ngrok.io/"
+	domain="http://a56cb1fd.ngrok.io/"
 	
 	Private Label10 As Label
 	Private Label11 As Label
@@ -42,10 +42,10 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-	job2.Initialize("Job2", Me)
-	job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
-	ProgressDialogShow("Loading...")
-	WebView1.LoadUrl(domain&"ta_v2/endpoint/view/layers.php?request=all")
+	'job2.Initialize("Job2", Me)
+	'job2.PostString(domain&"ta_v2/endpoint/countAll.php", "send=test" &"&data=test")
+	'ProgressDialogShow("Loading...")
+	'WebView1.LoadUrl(domain&"ta_v2/endpoint/view/layers.php?request=all")
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -53,14 +53,16 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub JobDone (Job As HttpJob)
-	
+	ProgressDialogHide
 	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
 	If Job.Success = True Then
-		ProgressDialogHide
+		
+		
 		Select Job.JobName
 			Case "Job2"
 				Dim parser As JSONParser
 				parser.Initialize(Job.GetString)
+				Log(Job.GetString)
 				Dim root As Map = parser.NextObject
 				Dim features As List = root.Get("features")
 				For Each colfeatures As Map In features
@@ -74,13 +76,14 @@ Sub JobDone (Job As HttpJob)
 					Label12.Text=citizen1
 				Next
 
-			
+				Job.Release
 		End Select
 	Else
 		Log("Error: " & Job.ErrorMessage)
 		ToastMessageShow("Error: " & Job.ErrorMessage, True)
+		Job.Release
 	End If
-	Job.Release
+	
 End Sub
 
 
@@ -118,4 +121,22 @@ End Sub
 
 Sub Button9_Click
 	StartActivity("lands_id")
+End Sub
+
+Sub Button10_Click
+	StartActivity("land_by_owner")
+End Sub
+
+Sub Button11_Click
+	StartActivity("buildings")
+End Sub
+
+
+Sub Button12_Click
+	StartActivity("building_id")
+End Sub
+
+
+Sub Button13_Click
+	StartActivity("building_owner")
 End Sub
