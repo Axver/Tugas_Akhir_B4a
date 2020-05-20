@@ -366,14 +366,14 @@ public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
-public b4a.example.lands_id _lands_id = null;
-public b4a.example.lands _lands = null;
 public b4a.example.land_by_owner _land_by_owner = null;
 public b4a.example.building_id _building_id = null;
 public b4a.example.building_owner _building_owner = null;
 public b4a.example.buildings _buildings = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
+public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="mortality";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))

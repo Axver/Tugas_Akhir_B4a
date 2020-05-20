@@ -8,7 +8,7 @@ public class owner_states_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (owner_states) ","owner_states",17,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,18);
+		Debug.PushSubsStack("Activity_Create (owner_states) ","owner_states",15,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,18);
 if (RapidSub.canDelegate("activity_create")) { return b4a.example.owner_states.remoteMe.runUserSub(false, "owner_states","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 18;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -25,7 +25,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (owner_states) ","owner_states",17,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,28);
+		Debug.PushSubsStack("Activity_Pause (owner_states) ","owner_states",15,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,28);
 if (RapidSub.canDelegate("activity_pause")) { return b4a.example.owner_states.remoteMe.runUserSub(false, "owner_states","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 28;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -42,7 +42,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (owner_states) ","owner_states",17,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,24);
+		Debug.PushSubsStack("Activity_Resume (owner_states) ","owner_states",15,owner_states.mostCurrent.activityBA,owner_states.mostCurrent,24);
 if (RapidSub.canDelegate("activity_resume")) { return b4a.example.owner_states.remoteMe.runUserSub(false, "owner_states","activity_resume");}
  BA.debugLineNum = 24;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(8388608);

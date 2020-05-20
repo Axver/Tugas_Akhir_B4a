@@ -305,8 +305,8 @@ public static RemoteObject  _globals() throws Exception{
 dashboard.mostCurrent._domain = RemoteObject.createImmutable("");
  //BA.debugLineNum = 16;BA.debugLine="Dim job2 As HttpJob";
 dashboard.mostCurrent._job2 = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");
- //BA.debugLineNum = 17;BA.debugLine="domain=\"https://b9312448.ngrok.io/\"";
-dashboard.mostCurrent._domain = BA.ObjectToString("https://b9312448.ngrok.io/");
+ //BA.debugLineNum = 17;BA.debugLine="domain=\"http://ca024f23.ngrok.io/\"";
+dashboard.mostCurrent._domain = BA.ObjectToString("http://ca024f23.ngrok.io/");
  //BA.debugLineNum = 19;BA.debugLine="Private Label10 As Label";
 dashboard.mostCurrent._label10 = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
  //BA.debugLineNum = 20;BA.debugLine="Private Label11 As Label";

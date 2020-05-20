@@ -8,7 +8,7 @@ public class building_owner_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,25);
+		Debug.PushSubsStack("Activity_Create (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,25);
 if (RapidSub.canDelegate("activity_create")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -34,7 +34,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,41);
+		Debug.PushSubsStack("Activity_Pause (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,41);
 if (RapidSub.canDelegate("activity_pause")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -51,7 +51,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,35);
+		Debug.PushSubsStack("Activity_Resume (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,35);
 if (RapidSub.canDelegate("activity_resume")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","activity_resume");}
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4);
@@ -73,7 +73,7 @@ finally {
 		}}
 public static RemoteObject  _button1_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button1_Click (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,51);
+		Debug.PushSubsStack("Button1_Click (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,51);
 if (RapidSub.canDelegate("button1_click")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","button1_click");}
 RemoteObject _tax_number = RemoteObject.createImmutable("");
  BA.debugLineNum = 51;BA.debugLine="Sub Button1_Click";
@@ -128,7 +128,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _jobdone(RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,63);
+		Debug.PushSubsStack("JobDone (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,63);
 if (RapidSub.canDelegate("jobdone")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","jobdone", _job);}
 RemoteObject _parser = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser");
 RemoteObject _root = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
@@ -376,7 +376,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _webview1_pagefinished(RemoteObject _strurl) throws Exception{
 try {
-		Debug.PushSubsStack("webview1_PageFinished (building_owner) ","building_owner",15,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,45);
+		Debug.PushSubsStack("webview1_PageFinished (building_owner) ","building_owner",13,building_owner.mostCurrent.activityBA,building_owner.mostCurrent,45);
 if (RapidSub.canDelegate("webview1_pagefinished")) { return b4a.example.building_owner.remoteMe.runUserSub(false, "building_owner","webview1_pagefinished", _strurl);}
 Debug.locals.put("StrUrl", _strurl);
  BA.debugLineNum = 45;BA.debugLine="Sub webview1_PageFinished (StrUrl As String)";

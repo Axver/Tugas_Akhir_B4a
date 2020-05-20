@@ -91,14 +91,14 @@ public static b4a.example.add_mortality _add_mortality = null;
 public static b4a.example.outcome _outcome = null;
 public static b4a.example.add_outcome _add_outcome = null;
 public static b4a.example.citizen _citizen = null;
-public static b4a.example.lands_id _lands_id = null;
-public static b4a.example.lands _lands = null;
 public static b4a.example.land_by_owner _land_by_owner = null;
 public static b4a.example.building_id _building_id = null;
 public static b4a.example.building_owner _building_owner = null;
 public static b4a.example.buildings _buildings = null;
 public static b4a.example.owner_states _owner_states = null;
 public static b4a.example.owners _owners = null;
+public static b4a.example.lands _lands = null;
+public static b4a.example.lands_id _lands_id = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",family_card.mostCurrent._activity,"add_birth",Debug.moduleToString(b4a.example.add_birth.class),"add_mortality",Debug.moduleToString(b4a.example.add_mortality.class),"add_outcome",Debug.moduleToString(b4a.example.add_outcome.class),"birth",Debug.moduleToString(b4a.example.birth.class),"building_id",Debug.moduleToString(b4a.example.building_id.class),"building_owner",Debug.moduleToString(b4a.example.building_owner.class),"buildings",Debug.moduleToString(b4a.example.buildings.class),"Button1",family_card.mostCurrent._button1,"citizen",Debug.moduleToString(b4a.example.citizen.class),"citizen_name_g",family_card.mostCurrent._citizen_name_g,"clan_g",family_card.mostCurrent._clan_g,"dashboard",Debug.moduleToString(b4a.example.dashboard.class),"domain",family_card.mostCurrent._domain,"EditText1",family_card.mostCurrent._edittext1,"gender_g",family_card.mostCurrent._gender_g,"HttpUtils2Service",family_card.mostCurrent._httputils2service,"job2",family_card.mostCurrent._job2,"Label1",family_card.mostCurrent._label1,"Label10",family_card.mostCurrent._label10,"Label11",family_card.mostCurrent._label11,"Label12",family_card.mostCurrent._label12,"Label2",family_card.mostCurrent._label2,"Label3",family_card.mostCurrent._label3,"Label4",family_card.mostCurrent._label4,"Label5",family_card.mostCurrent._label5,"land_by_owner",Debug.moduleToString(b4a.example.land_by_owner.class),"lands",Debug.moduleToString(b4a.example.lands.class),"lands_id",Debug.moduleToString(b4a.example.lands_id.class),"ListView1",family_card.mostCurrent._listview1,"Main",Debug.moduleToString(b4a.example.main.class),"mh1",family_card._mh1,"mh2",family_card._mh2,"mortality",Debug.moduleToString(b4a.example.mortality.class),"mw1",family_card._mw1,"mw2",family_card._mw2,"outcome",Debug.moduleToString(b4a.example.outcome.class),"owner_states",Debug.moduleToString(b4a.example.owner_states.class),"owners",Debug.moduleToString(b4a.example.owners.class),"PanelMain",family_card.mostCurrent._panelmain,"phone_g",family_card.mostCurrent._phone_g,"pnlInput",family_card.mostCurrent._pnlinput,"pnlSelect",family_card.mostCurrent._pnlselect,"Starter",Debug.moduleToString(b4a.example.starter.class),"status_g",family_card.mostCurrent._status_g};
 }

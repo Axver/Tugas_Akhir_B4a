@@ -83,14 +83,14 @@ public static b4a.example.outcome _outcome = null;
 public static b4a.example.add_outcome _add_outcome = null;
 public static b4a.example.family_card _family_card = null;
 public static b4a.example.citizen _citizen = null;
-public static b4a.example.lands_id _lands_id = null;
-public static b4a.example.lands _lands = null;
 public static b4a.example.land_by_owner _land_by_owner = null;
 public static b4a.example.building_id _building_id = null;
 public static b4a.example.building_owner _building_owner = null;
 public static b4a.example.buildings _buildings = null;
 public static b4a.example.owner_states _owner_states = null;
 public static b4a.example.owners _owners = null;
+public static b4a.example.lands _lands = null;
+public static b4a.example.lands_id _lands_id = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",mortality.mostCurrent._activity,"add_birth",Debug.moduleToString(b4a.example.add_birth.class),"add_mortality",Debug.moduleToString(b4a.example.add_mortality.class),"add_outcome",Debug.moduleToString(b4a.example.add_outcome.class),"Alignment",mortality._alignment,"birth",Debug.moduleToString(b4a.example.birth.class),"building_id",Debug.moduleToString(b4a.example.building_id.class),"building_owner",Debug.moduleToString(b4a.example.building_owner.class),"buildings",Debug.moduleToString(b4a.example.buildings.class),"citizen",Debug.moduleToString(b4a.example.citizen.class),"ColumnWidth",mortality._columnwidth,"dashboard",Debug.moduleToString(b4a.example.dashboard.class),"domain",mortality.mostCurrent._domain,"family_card",Debug.moduleToString(b4a.example.family_card.class),"FontColor",mortality._fontcolor,"FontSize",mortality._fontsize,"Header",mortality.mostCurrent._header,"HeaderColor",mortality._headercolor,"HeaderFontColor",mortality._headerfontcolor,"HttpUtils2Service",mortality.mostCurrent._httputils2service,"job2",mortality.mostCurrent._job2,"land_by_owner",Debug.moduleToString(b4a.example.land_by_owner.class),"lands",Debug.moduleToString(b4a.example.lands.class),"lands_id",Debug.moduleToString(b4a.example.lands_id.class),"Main",Debug.moduleToString(b4a.example.main.class),"NumberOfColumns",mortality._numberofcolumns,"outcome",Debug.moduleToString(b4a.example.outcome.class),"owner_states",Debug.moduleToString(b4a.example.owner_states.class),"owners",Debug.moduleToString(b4a.example.owners.class),"Panel7",mortality.mostCurrent._panel7,"RowHeight",mortality._rowheight,"SelectedRow",mortality._selectedrow,"SelectedRowColor",mortality._selectedrowcolor,"Starter",Debug.moduleToString(b4a.example.starter.class),"SV",mortality.mostCurrent._sv,"Table",mortality.mostCurrent._table,"TableColor",mortality._tablecolor};
 }

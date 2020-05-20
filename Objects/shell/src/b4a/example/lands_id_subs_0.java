@@ -8,7 +8,7 @@ public class lands_id_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,25);
+		Debug.PushSubsStack("Activity_Create (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,25);
 if (RapidSub.canDelegate("activity_create")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -34,7 +34,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,39);
+		Debug.PushSubsStack("Activity_Pause (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,39);
 if (RapidSub.canDelegate("activity_pause")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 39;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -51,7 +51,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,35);
+		Debug.PushSubsStack("Activity_Resume (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,35);
 if (RapidSub.canDelegate("activity_resume")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","activity_resume");}
  BA.debugLineNum = 35;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(4);
@@ -67,7 +67,7 @@ finally {
 		}}
 public static RemoteObject  _button1_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button1_Click (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,49);
+		Debug.PushSubsStack("Button1_Click (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,49);
 if (RapidSub.canDelegate("button1_click")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","button1_click");}
 RemoteObject _land_id = RemoteObject.createImmutable("");
  BA.debugLineNum = 49;BA.debugLine="Sub Button1_Click";
@@ -111,8 +111,8 @@ lands_id.mostCurrent._webview1 = RemoteObject.createNew ("anywheresoftware.b4a.o
 lands_id.mostCurrent._domain = RemoteObject.createImmutable("");
  //BA.debugLineNum = 18;BA.debugLine="Dim job2 As HttpJob";
 lands_id.mostCurrent._job2 = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");
- //BA.debugLineNum = 20;BA.debugLine="domain=\"http://34d0b8ce.ngrok.io/\"";
-lands_id.mostCurrent._domain = BA.ObjectToString("http://34d0b8ce.ngrok.io/");
+ //BA.debugLineNum = 20;BA.debugLine="domain=\"http://ca024f23.ngrok.io/\"";
+lands_id.mostCurrent._domain = BA.ObjectToString("http://ca024f23.ngrok.io/");
  //BA.debugLineNum = 21;BA.debugLine="Private EditText1 As EditText";
 lands_id.mostCurrent._edittext1 = RemoteObject.createNew ("anywheresoftware.b4a.objects.EditTextWrapper");
  //BA.debugLineNum = 22;BA.debugLine="Private ListView1 As ListView";
@@ -122,7 +122,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _jobdone(RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,62);
+		Debug.PushSubsStack("JobDone (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,62);
 if (RapidSub.canDelegate("jobdone")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","jobdone", _job);}
 RemoteObject _parser = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser");
 RemoteObject _root = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.Map");
@@ -352,7 +352,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _webview1_pagefinished(RemoteObject _strurl) throws Exception{
 try {
-		Debug.PushSubsStack("webview1_PageFinished (lands_id) ","lands_id",11,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,43);
+		Debug.PushSubsStack("webview1_PageFinished (lands_id) ","lands_id",18,lands_id.mostCurrent.activityBA,lands_id.mostCurrent,43);
 if (RapidSub.canDelegate("webview1_pagefinished")) { return b4a.example.lands_id.remoteMe.runUserSub(false, "lands_id","webview1_pagefinished", _strurl);}
 Debug.locals.put("StrUrl", _strurl);
  BA.debugLineNum = 43;BA.debugLine="Sub webview1_PageFinished (StrUrl As String)";

@@ -355,48 +355,48 @@ public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
-public b4a.example.lands_id _lands_id = null;
-public b4a.example.lands _lands = null;
 public b4a.example.land_by_owner _land_by_owner = null;
 public b4a.example.building_owner _building_owner = null;
 public b4a.example.buildings _buildings = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
+public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="building_id";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=10027008;
- //BA.debugLineNum = 10027008;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=10027010;
- //BA.debugLineNum = 10027010;BA.debugLine="Activity.LoadLayout(\"building_id\")";
+RDebugUtils.currentLine=10223616;
+ //BA.debugLineNum = 10223616;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=10223618;
+ //BA.debugLineNum = 10223618;BA.debugLine="Activity.LoadLayout(\"building_id\")";
 mostCurrent._activity.LoadLayout("building_id",mostCurrent.activityBA);
-RDebugUtils.currentLine=10027012;
- //BA.debugLineNum = 10027012;BA.debugLine="WebView1.LoadUrl(domain&\"ta_v2/endpoint/view/laye";
+RDebugUtils.currentLine=10223620;
+ //BA.debugLineNum = 10223620;BA.debugLine="WebView1.LoadUrl(domain&\"ta_v2/endpoint/view/laye";
 mostCurrent._webview1.LoadUrl(mostCurrent._domain+"ta_v2/endpoint/view/layers.php?request=all");
-RDebugUtils.currentLine=10027013;
- //BA.debugLineNum = 10027013;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=10223621;
+ //BA.debugLineNum = 10223621;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
-RDebugUtils.currentLine=10027016;
- //BA.debugLineNum = 10027016;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10223624;
+ //BA.debugLineNum = 10223624;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="building_id";
-RDebugUtils.currentLine=10158080;
- //BA.debugLineNum = 10158080;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=10158082;
- //BA.debugLineNum = 10158082;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10354688;
+ //BA.debugLineNum = 10354688;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=10354690;
+ //BA.debugLineNum = 10354690;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="building_id";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=10092544;
- //BA.debugLineNum = 10092544;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=10092546;
- //BA.debugLineNum = 10092546;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10289152;
+ //BA.debugLineNum = 10289152;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=10289154;
+ //BA.debugLineNum = 10289154;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
@@ -404,31 +404,31 @@ RDebugUtils.currentModule="building_id";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
 String _tax_number = "";
-RDebugUtils.currentLine=10289152;
- //BA.debugLineNum = 10289152;BA.debugLine="Sub Button1_Click";
-RDebugUtils.currentLine=10289153;
- //BA.debugLineNum = 10289153;BA.debugLine="Dim tax_number As String";
+RDebugUtils.currentLine=10485760;
+ //BA.debugLineNum = 10485760;BA.debugLine="Sub Button1_Click";
+RDebugUtils.currentLine=10485761;
+ //BA.debugLineNum = 10485761;BA.debugLine="Dim tax_number As String";
 _tax_number = "";
-RDebugUtils.currentLine=10289154;
- //BA.debugLineNum = 10289154;BA.debugLine="tax_number= EditText1.Text";
+RDebugUtils.currentLine=10485762;
+ //BA.debugLineNum = 10485762;BA.debugLine="tax_number= EditText1.Text";
 _tax_number = mostCurrent._edittext1.getText();
-RDebugUtils.currentLine=10289156;
- //BA.debugLineNum = 10289156;BA.debugLine="WebView1.LoadUrl(domain&\"ta_v2/endpoint/view/land";
+RDebugUtils.currentLine=10485764;
+ //BA.debugLineNum = 10485764;BA.debugLine="WebView1.LoadUrl(domain&\"ta_v2/endpoint/view/land";
 mostCurrent._webview1.LoadUrl(mostCurrent._domain+"ta_v2/endpoint/view/land_tax_view.php?tax_number="+_tax_number);
-RDebugUtils.currentLine=10289157;
- //BA.debugLineNum = 10289157;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=10485765;
+ //BA.debugLineNum = 10485765;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
-RDebugUtils.currentLine=10289159;
- //BA.debugLineNum = 10289159;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+RDebugUtils.currentLine=10485767;
+ //BA.debugLineNum = 10485767;BA.debugLine="job2.Initialize(\"Job2\", Me)";
 mostCurrent._job2._initialize(processBA,"Job2",building_id.getObject());
-RDebugUtils.currentLine=10289160;
- //BA.debugLineNum = 10289160;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/land_tax.p";
+RDebugUtils.currentLine=10485768;
+ //BA.debugLineNum = 10485768;BA.debugLine="job2.PostString(domain&\"ta_v2/endpoint/land_tax.p";
 mostCurrent._job2._poststring(mostCurrent._domain+"ta_v2/endpoint/land_tax.php","tax_number="+_tax_number);
-RDebugUtils.currentLine=10289161;
- //BA.debugLineNum = 10289161;BA.debugLine="ProgressDialogShow(\"Loading...\")";
+RDebugUtils.currentLine=10485769;
+ //BA.debugLineNum = 10485769;BA.debugLine="ProgressDialogShow(\"Loading...\")";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow(mostCurrent.activityBA,BA.ObjectToCharSequence("Loading..."));
-RDebugUtils.currentLine=10289162;
- //BA.debugLineNum = 10289162;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10485770;
+ //BA.debugLineNum = 10485770;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job) throws Exception{
@@ -458,40 +458,40 @@ String _x = "";
 String _y = "";
 String _land_id = "";
 String _born_date = "";
-RDebugUtils.currentLine=10354688;
- //BA.debugLineNum = 10354688;BA.debugLine="Sub JobDone (Job As HttpJob)";
-RDebugUtils.currentLine=10354690;
- //BA.debugLineNum = 10354690;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+RDebugUtils.currentLine=10551296;
+ //BA.debugLineNum = 10551296;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=10551298;
+ //BA.debugLineNum = 10551298;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
 anywheresoftware.b4a.keywords.Common.Log("JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success));
-RDebugUtils.currentLine=10354691;
- //BA.debugLineNum = 10354691;BA.debugLine="If Job.Success = True Then";
+RDebugUtils.currentLine=10551299;
+ //BA.debugLineNum = 10551299;BA.debugLine="If Job.Success = True Then";
 if (_job._success==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=10354692;
- //BA.debugLineNum = 10354692;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=10551300;
+ //BA.debugLineNum = 10551300;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=10354693;
- //BA.debugLineNum = 10354693;BA.debugLine="Select Job.JobName";
+RDebugUtils.currentLine=10551301;
+ //BA.debugLineNum = 10551301;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"Job2")) {
 case 0: {
-RDebugUtils.currentLine=10354695;
- //BA.debugLineNum = 10354695;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=10551303;
+ //BA.debugLineNum = 10551303;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=10354696;
- //BA.debugLineNum = 10354696;BA.debugLine="parser.Initialize(Job.GetString)";
+RDebugUtils.currentLine=10551304;
+ //BA.debugLineNum = 10551304;BA.debugLine="parser.Initialize(Job.GetString)";
 _parser.Initialize(_job._getstring());
-RDebugUtils.currentLine=10354697;
- //BA.debugLineNum = 10354697;BA.debugLine="Log(Job.GetString)";
+RDebugUtils.currentLine=10551305;
+ //BA.debugLineNum = 10551305;BA.debugLine="Log(Job.GetString)";
 anywheresoftware.b4a.keywords.Common.Log(_job._getstring());
-RDebugUtils.currentLine=10354698;
- //BA.debugLineNum = 10354698;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=10551306;
+ //BA.debugLineNum = 10551306;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=10354699;
- //BA.debugLineNum = 10354699;BA.debugLine="Dim features As List = root.Get(\"features\")";
+RDebugUtils.currentLine=10551307;
+ //BA.debugLineNum = 10551307;BA.debugLine="Dim features As List = root.Get(\"features\")";
 _features = new anywheresoftware.b4a.objects.collections.List();
 _features.setObject((java.util.List)(_root.Get((Object)("features"))));
-RDebugUtils.currentLine=10354700;
- //BA.debugLineNum = 10354700;BA.debugLine="For Each colfeatures As Map In features";
+RDebugUtils.currentLine=10551308;
+ //BA.debugLineNum = 10551308;BA.debugLine="For Each colfeatures As Map In features";
 _colfeatures = new anywheresoftware.b4a.objects.collections.Map();
 {
 final anywheresoftware.b4a.BA.IterableList group11 = _features;
@@ -500,16 +500,16 @@ final int groupLen11 = group11.getSize()
 ;
 for (; index11 < groupLen11;index11++){
 _colfeatures.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(group11.Get(index11)));
-RDebugUtils.currentLine=10354701;
- //BA.debugLineNum = 10354701;BA.debugLine="Dim geometry As Map = colfeatures.Get(\"geomet";
+RDebugUtils.currentLine=10551309;
+ //BA.debugLineNum = 10551309;BA.debugLine="Dim geometry As Map = colfeatures.Get(\"geomet";
 _geometry = new anywheresoftware.b4a.objects.collections.Map();
 _geometry.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("geometry"))));
-RDebugUtils.currentLine=10354702;
- //BA.debugLineNum = 10354702;BA.debugLine="Dim coordinates As List = geometry.Get(\"coord";
+RDebugUtils.currentLine=10551310;
+ //BA.debugLineNum = 10551310;BA.debugLine="Dim coordinates As List = geometry.Get(\"coord";
 _coordinates = new anywheresoftware.b4a.objects.collections.List();
 _coordinates.setObject((java.util.List)(_geometry.Get((Object)("coordinates"))));
-RDebugUtils.currentLine=10354703;
- //BA.debugLineNum = 10354703;BA.debugLine="For Each colcoordinates As List In coordinate";
+RDebugUtils.currentLine=10551311;
+ //BA.debugLineNum = 10551311;BA.debugLine="For Each colcoordinates As List In coordinate";
 _colcoordinates = new anywheresoftware.b4a.objects.collections.List();
 {
 final anywheresoftware.b4a.BA.IterableList group14 = _coordinates;
@@ -518,8 +518,8 @@ final int groupLen14 = group14.getSize()
 ;
 for (; index14 < groupLen14;index14++){
 _colcoordinates.setObject((java.util.List)(group14.Get(index14)));
-RDebugUtils.currentLine=10354704;
- //BA.debugLineNum = 10354704;BA.debugLine="For Each colcolcoordinates As List In colcoo";
+RDebugUtils.currentLine=10551312;
+ //BA.debugLineNum = 10551312;BA.debugLine="For Each colcolcoordinates As List In colcoo";
 _colcolcoordinates = new anywheresoftware.b4a.objects.collections.List();
 {
 final anywheresoftware.b4a.BA.IterableList group15 = _colcoordinates;
@@ -528,8 +528,8 @@ final int groupLen15 = group15.getSize()
 ;
 for (; index15 < groupLen15;index15++){
 _colcolcoordinates.setObject((java.util.List)(group15.Get(index15)));
-RDebugUtils.currentLine=10354705;
- //BA.debugLineNum = 10354705;BA.debugLine="For Each colcolcolcoordinates As List In co";
+RDebugUtils.currentLine=10551313;
+ //BA.debugLineNum = 10551313;BA.debugLine="For Each colcolcolcoordinates As List In co";
 _colcolcolcoordinates = new anywheresoftware.b4a.objects.collections.List();
 {
 final anywheresoftware.b4a.BA.IterableList group16 = _colcolcoordinates;
@@ -538,8 +538,8 @@ final int groupLen16 = group16.getSize()
 ;
 for (; index16 < groupLen16;index16++){
 _colcolcolcoordinates.setObject((java.util.List)(group16.Get(index16)));
-RDebugUtils.currentLine=10354706;
- //BA.debugLineNum = 10354706;BA.debugLine="For Each colcolcolcolcoordinates As Double";
+RDebugUtils.currentLine=10551314;
+ //BA.debugLineNum = 10551314;BA.debugLine="For Each colcolcolcolcoordinates As Double";
 {
 final anywheresoftware.b4a.BA.IterableList group17 = _colcolcolcoordinates;
 final int groupLen17 = group17.getSize()
@@ -555,119 +555,119 @@ _colcolcolcolcoordinates = (double)(BA.ObjectToNumber(group17.Get(index17)));
 };
  }
 };
-RDebugUtils.currentLine=10354711;
- //BA.debugLineNum = 10354711;BA.debugLine="Dim Type As String = geometry.Get(\"type\")";
+RDebugUtils.currentLine=10551319;
+ //BA.debugLineNum = 10551319;BA.debugLine="Dim Type As String = geometry.Get(\"type\")";
 _type = BA.ObjectToString(_geometry.Get((Object)("type")));
-RDebugUtils.currentLine=10354712;
- //BA.debugLineNum = 10354712;BA.debugLine="Dim Type As String = colfeatures.Get(\"type\")";
+RDebugUtils.currentLine=10551320;
+ //BA.debugLineNum = 10551320;BA.debugLine="Dim Type As String = colfeatures.Get(\"type\")";
 _type = BA.ObjectToString(_colfeatures.Get((Object)("type")));
-RDebugUtils.currentLine=10354713;
- //BA.debugLineNum = 10354713;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
+RDebugUtils.currentLine=10551321;
+ //BA.debugLineNum = 10551321;BA.debugLine="Dim properties As Map = colfeatures.Get(\"prop";
 _properties = new anywheresoftware.b4a.objects.collections.Map();
 _properties.setObject((anywheresoftware.b4a.objects.collections.Map.MyMap)(_colfeatures.Get((Object)("properties"))));
-RDebugUtils.currentLine=10354714;
- //BA.debugLineNum = 10354714;BA.debugLine="Dim clan_name As String = properties.Get(\"cla";
+RDebugUtils.currentLine=10551322;
+ //BA.debugLineNum = 10551322;BA.debugLine="Dim clan_name As String = properties.Get(\"cla";
 _clan_name = BA.ObjectToString(_properties.Get((Object)("clan_name")));
-RDebugUtils.currentLine=10354715;
- //BA.debugLineNum = 10354715;BA.debugLine="Dim owner_name As String = properties.Get(\"ow";
+RDebugUtils.currentLine=10551323;
+ //BA.debugLineNum = 10551323;BA.debugLine="Dim owner_name As String = properties.Get(\"ow";
 _owner_name = BA.ObjectToString(_properties.Get((Object)("owner_name")));
-RDebugUtils.currentLine=10354716;
- //BA.debugLineNum = 10354716;BA.debugLine="Dim gender As String = properties.Get(\"gender";
+RDebugUtils.currentLine=10551324;
+ //BA.debugLineNum = 10551324;BA.debugLine="Dim gender As String = properties.Get(\"gender";
 _gender = BA.ObjectToString(_properties.Get((Object)("gender")));
-RDebugUtils.currentLine=10354717;
- //BA.debugLineNum = 10354717;BA.debugLine="Dim land_owner As String = properties.Get(\"la";
+RDebugUtils.currentLine=10551325;
+ //BA.debugLineNum = 10551325;BA.debugLine="Dim land_owner As String = properties.Get(\"la";
 _land_owner = BA.ObjectToString(_properties.Get((Object)("land_owner")));
-RDebugUtils.currentLine=10354718;
- //BA.debugLineNum = 10354718;BA.debugLine="Dim phone As String = properties.Get(\"phone\")";
+RDebugUtils.currentLine=10551326;
+ //BA.debugLineNum = 10551326;BA.debugLine="Dim phone As String = properties.Get(\"phone\")";
 _phone = BA.ObjectToString(_properties.Get((Object)("phone")));
-RDebugUtils.currentLine=10354719;
- //BA.debugLineNum = 10354719;BA.debugLine="Dim tax_number As String = properties.Get(\"ta";
+RDebugUtils.currentLine=10551327;
+ //BA.debugLineNum = 10551327;BA.debugLine="Dim tax_number As String = properties.Get(\"ta";
 _tax_number = BA.ObjectToString(_properties.Get((Object)("tax_number")));
-RDebugUtils.currentLine=10354720;
- //BA.debugLineNum = 10354720;BA.debugLine="Dim status_name As String = properties.Get(\"s";
+RDebugUtils.currentLine=10551328;
+ //BA.debugLineNum = 10551328;BA.debugLine="Dim status_name As String = properties.Get(\"s";
 _status_name = BA.ObjectToString(_properties.Get((Object)("status_name")));
-RDebugUtils.currentLine=10354721;
- //BA.debugLineNum = 10354721;BA.debugLine="Dim x As String = properties.Get(\"x\")";
+RDebugUtils.currentLine=10551329;
+ //BA.debugLineNum = 10551329;BA.debugLine="Dim x As String = properties.Get(\"x\")";
 _x = BA.ObjectToString(_properties.Get((Object)("x")));
-RDebugUtils.currentLine=10354722;
- //BA.debugLineNum = 10354722;BA.debugLine="Dim y As String = properties.Get(\"y\")";
+RDebugUtils.currentLine=10551330;
+ //BA.debugLineNum = 10551330;BA.debugLine="Dim y As String = properties.Get(\"y\")";
 _y = BA.ObjectToString(_properties.Get((Object)("y")));
-RDebugUtils.currentLine=10354723;
- //BA.debugLineNum = 10354723;BA.debugLine="Dim land_id As String = properties.Get(\"land_";
+RDebugUtils.currentLine=10551331;
+ //BA.debugLineNum = 10551331;BA.debugLine="Dim land_id As String = properties.Get(\"land_";
 _land_id = BA.ObjectToString(_properties.Get((Object)("land_id")));
-RDebugUtils.currentLine=10354724;
- //BA.debugLineNum = 10354724;BA.debugLine="Dim born_date As String = properties.Get(\"bor";
+RDebugUtils.currentLine=10551332;
+ //BA.debugLineNum = 10551332;BA.debugLine="Dim born_date As String = properties.Get(\"bor";
 _born_date = BA.ObjectToString(_properties.Get((Object)("born_date")));
-RDebugUtils.currentLine=10354727;
- //BA.debugLineNum = 10354727;BA.debugLine="ListView1.AddSingleLine(\"Information\")";
+RDebugUtils.currentLine=10551335;
+ //BA.debugLineNum = 10551335;BA.debugLine="ListView1.AddSingleLine(\"Information\")";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Information"));
-RDebugUtils.currentLine=10354728;
- //BA.debugLineNum = 10354728;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 1";
+RDebugUtils.currentLine=10551336;
+ //BA.debugLineNum = 10551336;BA.debugLine="ListView1.SingleLineLayout.Label.TextSize = 1";
 mostCurrent._listview1.getSingleLineLayout().Label.setTextSize((float) (12));
-RDebugUtils.currentLine=10354729;
- //BA.debugLineNum = 10354729;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor =";
+RDebugUtils.currentLine=10551337;
+ //BA.debugLineNum = 10551337;BA.debugLine="ListView1.SingleLineLayout.Label.TextColor =";
 mostCurrent._listview1.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
-RDebugUtils.currentLine=10354730;
- //BA.debugLineNum = 10354730;BA.debugLine="ListView1.AddSingleLine(\"Clan Name:\"&clan_nam";
+RDebugUtils.currentLine=10551338;
+ //BA.debugLineNum = 10551338;BA.debugLine="ListView1.AddSingleLine(\"Clan Name:\"&clan_nam";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Clan Name:"+_clan_name));
-RDebugUtils.currentLine=10354731;
- //BA.debugLineNum = 10354731;BA.debugLine="ListView1.AddSingleLine(\"Owner Name:\"&owner_n";
+RDebugUtils.currentLine=10551339;
+ //BA.debugLineNum = 10551339;BA.debugLine="ListView1.AddSingleLine(\"Owner Name:\"&owner_n";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Owner Name:"+_owner_name));
-RDebugUtils.currentLine=10354732;
- //BA.debugLineNum = 10354732;BA.debugLine="ListView1.AddSingleLine(\"Gender:\"&gender)";
+RDebugUtils.currentLine=10551340;
+ //BA.debugLineNum = 10551340;BA.debugLine="ListView1.AddSingleLine(\"Gender:\"&gender)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Gender:"+_gender));
-RDebugUtils.currentLine=10354733;
- //BA.debugLineNum = 10354733;BA.debugLine="ListView1.AddSingleLine(\"Land Owner:\"&land_ow";
+RDebugUtils.currentLine=10551341;
+ //BA.debugLineNum = 10551341;BA.debugLine="ListView1.AddSingleLine(\"Land Owner:\"&land_ow";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Land Owner:"+_land_owner));
-RDebugUtils.currentLine=10354734;
- //BA.debugLineNum = 10354734;BA.debugLine="ListView1.AddSingleLine(\"Phone:\"&phone)";
+RDebugUtils.currentLine=10551342;
+ //BA.debugLineNum = 10551342;BA.debugLine="ListView1.AddSingleLine(\"Phone:\"&phone)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Phone:"+_phone));
-RDebugUtils.currentLine=10354735;
- //BA.debugLineNum = 10354735;BA.debugLine="ListView1.AddSingleLine(\"Tax Number:\"&tax_num";
+RDebugUtils.currentLine=10551343;
+ //BA.debugLineNum = 10551343;BA.debugLine="ListView1.AddSingleLine(\"Tax Number:\"&tax_num";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Tax Number:"+_tax_number));
-RDebugUtils.currentLine=10354736;
- //BA.debugLineNum = 10354736;BA.debugLine="ListView1.AddSingleLine(\"Status:\"&status_name";
+RDebugUtils.currentLine=10551344;
+ //BA.debugLineNum = 10551344;BA.debugLine="ListView1.AddSingleLine(\"Status:\"&status_name";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Status:"+_status_name));
-RDebugUtils.currentLine=10354737;
- //BA.debugLineNum = 10354737;BA.debugLine="ListView1.AddSingleLine(\"Land Id:\"&land_id)";
+RDebugUtils.currentLine=10551345;
+ //BA.debugLineNum = 10551345;BA.debugLine="ListView1.AddSingleLine(\"Land Id:\"&land_id)";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Land Id:"+_land_id));
-RDebugUtils.currentLine=10354738;
- //BA.debugLineNum = 10354738;BA.debugLine="ListView1.AddSingleLine(\"Coordinates:\"&x&\"||\"";
+RDebugUtils.currentLine=10551346;
+ //BA.debugLineNum = 10551346;BA.debugLine="ListView1.AddSingleLine(\"Coordinates:\"&x&\"||\"";
 mostCurrent._listview1.AddSingleLine(BA.ObjectToCharSequence("Coordinates:"+_x+"||"+_y));
  }
 };
-RDebugUtils.currentLine=10354740;
- //BA.debugLineNum = 10354740;BA.debugLine="Dim Type As String = root.Get(\"type\")";
+RDebugUtils.currentLine=10551348;
+ //BA.debugLineNum = 10551348;BA.debugLine="Dim Type As String = root.Get(\"type\")";
 _type = BA.ObjectToString(_root.Get((Object)("type")));
  break; }
 }
 ;
  }else {
-RDebugUtils.currentLine=10354752;
- //BA.debugLineNum = 10354752;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+RDebugUtils.currentLine=10551360;
+ //BA.debugLineNum = 10551360;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 anywheresoftware.b4a.keywords.Common.Log("Error: "+_job._errormessage);
-RDebugUtils.currentLine=10354753;
- //BA.debugLineNum = 10354753;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
+RDebugUtils.currentLine=10551361;
+ //BA.debugLineNum = 10551361;BA.debugLine="ToastMessageShow(\"Error: \" & Job.ErrorMessage, T";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Error: "+_job._errormessage),anywheresoftware.b4a.keywords.Common.True);
  };
-RDebugUtils.currentLine=10354755;
- //BA.debugLineNum = 10354755;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=10551363;
+ //BA.debugLineNum = 10551363;BA.debugLine="Job.Release";
 _job._release();
-RDebugUtils.currentLine=10354756;
- //BA.debugLineNum = 10354756;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10551364;
+ //BA.debugLineNum = 10551364;BA.debugLine="End Sub";
 return "";
 }
 public static String  _webview1_pagefinished(String _strurl) throws Exception{
 RDebugUtils.currentModule="building_id";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "webview1_pagefinished"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "webview1_pagefinished", new Object[] {_strurl}));}
-RDebugUtils.currentLine=10223616;
- //BA.debugLineNum = 10223616;BA.debugLine="Sub webview1_PageFinished (StrUrl As String)";
-RDebugUtils.currentLine=10223617;
- //BA.debugLineNum = 10223617;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=10420224;
+ //BA.debugLineNum = 10420224;BA.debugLine="Sub webview1_PageFinished (StrUrl As String)";
+RDebugUtils.currentLine=10420225;
+ //BA.debugLineNum = 10420225;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=10223619;
- //BA.debugLineNum = 10223619;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10420227;
+ //BA.debugLineNum = 10420227;BA.debugLine="End Sub";
 return "";
 }
 }

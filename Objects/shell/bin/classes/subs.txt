@@ -481,108 +481,48 @@ family_card,select_click,0,0,192,196
 ,pnlselect,,button1
 
 
-citizen,activity_create,1,0,31,38
-,button1,,edittext1,,label10,,label11,,label12,,listview1,,panelmain,,job2,,domain
-,button1,,edittext1,,label10,,label11,,label12,,listview1,,panelmain
+citizen,activity_create,1,0,44,51
+,button1,,edittext1,,label1,,label10,,label11,,label12,,label2,,label3,,label4,,label5,,listview1,,panelmain,,panelmain1,,job2,,domain
+,button1,,edittext1,,label1,,label10,,label11,,label12,,label2,,label3,,label4,,label5,,listview1,,panelmain,,panelmain1
 
-citizen,activity_pause,0,0,46,48
+citizen,activity_pause,0,0,59,61
 
 
 
-citizen,activity_resume,0,0,40,44
+citizen,activity_resume,0,0,53,57
 ,job2,,domain
 
 
-citizen,button1_click,0,0,111,129
+citizen,button1_click,0,0,143,161
 ,edittext1,,job2,,domain,,listview1
 
 
-citizen,globals,0,1,12,29
+citizen,globals,0,1,12,42
 ,domain
 ,domain
 
-citizen,jobdone,0,0,50,106
-,label10,,label11,,listview1
+citizen,jobdone,0,0,63,138
+,label10,,label11,,listview1,,citizen_name_g,,gender_g,,phone_g,,status_g
+,citizen_name_g,,gender_g,,phone_g,,status_g
 
-
-citizen,listview1_itemclick,1,0,161,174
-,button1,,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2
+citizen,listview1_itemclick,1,0,227,260
+,button1,,job2,,domain,,label1,,citizen_name_g,,label2,,phone_g,,label3,,gender_g,,label4,,status_g,,label5,,clan_g,,edittext1,,pnlselect,,pnlinput,,mh1,,panelmain1,,mw1,,mh2,,mw2,,wv1,,panelmain
 ,mh1,,mw1,,mh2,,mw2
-,panpop
-citizen,panpop,1,0,132,153
-,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2
+,panpopbuilding,,panpop
+citizen,panpopbuilding,1,0,194,219
+,edittext1,,pnlselect,,pnlinput,,mh1,,panelmain1,,mw1,,mh2,,mw2,,wv1,,domain
+,mh1,,mw1,,mh2,,mw2
+
+citizen,panpop,1,0,164,192
+,pnlselect,,pnlinput,,mh1,,panelmain,,mw1,,mh2,,mw2,,label1,,citizen_name_g,,label2,,phone_g,,label3,,gender_g,,label4,,status_g,,label5,,clan_g
 ,mh1,,mw1,,mh2,,mw2
 
 citizen,process_globals,0,1,6,10
 
 
 
-citizen,select_click,0,0,155,159
+citizen,select_click,0,0,221,225
 ,pnlselect,,button1
-
-
-lands_id,activity_create,1,0,25,33
-,edittext1,,listview1,,webview1,,domain
-,edittext1,,listview1,,webview1
-
-lands_id,activity_pause,0,0,39,41
-
-
-
-lands_id,activity_resume,0,0,35,37
-
-
-
-lands_id,button1_click,0,0,49,60
-,edittext1,,job2,,domain,,webview1
-
-
-lands_id,globals,0,1,12,23
-,domain
-,domain
-
-lands_id,jobdone,0,0,62,123
-,listview1
-
-
-lands_id,process_globals,0,1,6,10
-
-
-
-lands_id,webview1_pagefinished,0,0,43,46
-
-
-
-lands,activity_create,1,0,25,33
-,edittext1,,listview1,,webview1,,domain
-,edittext1,,listview1,,webview1
-
-lands,activity_pause,0,0,39,41
-
-
-
-lands,activity_resume,0,0,35,37
-
-
-
-lands,button1_click,0,0,49,59
-,edittext1,,webview1,,domain,,job2
-
-
-lands,globals,0,1,12,23
-,domain
-,domain
-
-lands,jobdone,0,0,61,129
-,listview1
-
-
-lands,process_globals,0,1,6,10
-
-
-
-lands,webview1_pagefinished,0,0,43,46
-
 
 
 land_by_owner,activity_create,1,0,25,33
@@ -750,6 +690,70 @@ owners,globals,0,1,12,16
 
 
 owners,process_globals,0,1,6,10
+
+
+
+lands,activity_create,1,0,25,33
+,edittext1,,listview1,,webview1,,domain
+,edittext1,,listview1,,webview1
+
+lands,activity_pause,0,0,39,41
+
+
+
+lands,activity_resume,0,0,35,37
+
+
+
+lands,button1_click,0,0,49,59
+,edittext1,,webview1,,domain,,job2
+
+
+lands,globals,0,1,12,23
+,domain
+,domain
+
+lands,jobdone,0,0,61,129
+,listview1
+
+
+lands,process_globals,0,1,6,10
+
+
+
+lands,webview1_pagefinished,0,0,43,46
+
+
+
+lands_id,activity_create,1,0,25,33
+,edittext1,,listview1,,webview1,,domain
+,edittext1,,listview1,,webview1
+
+lands_id,activity_pause,0,0,39,41
+
+
+
+lands_id,activity_resume,0,0,35,37
+
+
+
+lands_id,button1_click,0,0,49,60
+,edittext1,,job2,,domain,,webview1
+
+
+lands_id,globals,0,1,12,23
+,domain
+,domain
+
+lands_id,jobdone,0,0,62,123
+,listview1
+
+
+lands_id,process_globals,0,1,6,10
+
+
+
+lands_id,webview1_pagefinished,0,0,43,46
 
 
 

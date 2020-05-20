@@ -30,7 +30,7 @@ Sub Globals
 	Dim status_g As String
 	
 	
-	domain="https://b9312448.ngrok.io/"
+	domain="http://ca024f23.ngrok.io/"
 
 	Private Label10 As Label
 	Private Label11 As Label

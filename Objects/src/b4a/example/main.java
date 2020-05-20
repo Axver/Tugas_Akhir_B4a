@@ -354,14 +354,14 @@ vis = vis | (outcome.mostCurrent != null);
 vis = vis | (add_outcome.mostCurrent != null);
 vis = vis | (family_card.mostCurrent != null);
 vis = vis | (citizen.mostCurrent != null);
-vis = vis | (lands_id.mostCurrent != null);
-vis = vis | (lands.mostCurrent != null);
 vis = vis | (land_by_owner.mostCurrent != null);
 vis = vis | (building_id.mostCurrent != null);
 vis = vis | (building_owner.mostCurrent != null);
 vis = vis | (buildings.mostCurrent != null);
 vis = vis | (owner_states.mostCurrent != null);
 vis = vis | (owners.mostCurrent != null);
+vis = vis | (lands.mostCurrent != null);
+vis = vis | (lands_id.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -496,30 +496,6 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
 
  {
             Activity __a = null;
-            if (lands_id.previousOne != null) {
-				__a = lands_id.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(lands_id.mostCurrent == null ? null : lands_id.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (lands.previousOne != null) {
-				__a = lands.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(lands.mostCurrent == null ? null : lands.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
             if (land_by_owner.previousOne != null) {
 				__a = land_by_owner.previousOne.get();
 			}
@@ -590,6 +566,30 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
             if (__a != null)
 				__a.finish();}
 
+ {
+            Activity __a = null;
+            if (lands.previousOne != null) {
+				__a = lands.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(lands.mostCurrent == null ? null : lands.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (lands_id.previousOne != null) {
+				__a = lands_id.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(lands_id.mostCurrent == null ? null : lands_id.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
@@ -603,14 +603,14 @@ public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
-public b4a.example.lands_id _lands_id = null;
-public b4a.example.lands _lands = null;
 public b4a.example.land_by_owner _land_by_owner = null;
 public b4a.example.building_id _building_id = null;
 public b4a.example.building_owner _building_owner = null;
 public b4a.example.buildings _buildings = null;
 public b4a.example.owner_states _owner_states = null;
 public b4a.example.owners _owners = null;
+public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
@@ -646,13 +646,13 @@ public static String  _button1_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
-RDebugUtils.currentLine=327680;
- //BA.debugLineNum = 327680;BA.debugLine="Sub Button1_Click";
-RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="StartActivity(\"dashboard\")";
+RDebugUtils.currentLine=720896;
+ //BA.debugLineNum = 720896;BA.debugLine="Sub Button1_Click";
+RDebugUtils.currentLine=720897;
+ //BA.debugLineNum = 720897;BA.debugLine="StartActivity(\"dashboard\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("dashboard"));
-RDebugUtils.currentLine=327682;
- //BA.debugLineNum = 327682;BA.debugLine="End Sub";
+RDebugUtils.currentLine=720898;
+ //BA.debugLineNum = 720898;BA.debugLine="End Sub";
 return "";
 }
 }

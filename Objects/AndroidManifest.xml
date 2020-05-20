@@ -100,20 +100,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".lands_id"
-			android:label="B4A Example"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".lands"
-			android:label="B4A Example"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".land_by_owner"
 			android:label="B4A Example"
 			android:screenOrientation="unspecified">
@@ -150,6 +136,20 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".owners"
+			android:label="B4A Example"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".lands"
+			android:label="B4A Example"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".lands_id"
 			android:label="B4A Example"
 			android:screenOrientation="unspecified">
 		</activity>

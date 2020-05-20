@@ -20,7 +20,7 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Dim domain As String
 	Dim job2 As HttpJob
-	domain="https://b9312448.ngrok.io/"
+	domain="http://ca024f23.ngrok.io/"
 	
 	Private Label10 As Label
 	Private Label11 As Label

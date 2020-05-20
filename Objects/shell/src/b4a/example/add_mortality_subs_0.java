@@ -130,8 +130,8 @@ add_mortality.mostCurrent._edittext4 = RemoteObject.createNew ("anywheresoftware
 add_mortality.mostCurrent._edittext5 = RemoteObject.createNew ("anywheresoftware.b4a.objects.EditTextWrapper");
  //BA.debugLineNum = 22;BA.debugLine="Private Button1 As Button";
 add_mortality.mostCurrent._button1 = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");
- //BA.debugLineNum = 23;BA.debugLine="domain=\"https://b9312448.ngrok.io/\"";
-add_mortality.mostCurrent._domain = BA.ObjectToString("https://b9312448.ngrok.io/");
+ //BA.debugLineNum = 23;BA.debugLine="domain=\"http://ca024f23.ngrok.io/\"";
+add_mortality.mostCurrent._domain = BA.ObjectToString("http://ca024f23.ngrok.io/");
  //BA.debugLineNum = 24;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }

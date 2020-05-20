@@ -23,7 +23,7 @@ Sub Globals
 	Dim domain As String
 	Dim job2 As HttpJob
 	
-	domain="http://34d0b8ce.ngrok.io/"
+	domain="http://ca024f23.ngrok.io/"
 	Private EditText1 As EditText
 	Private ListView1 As ListView
 End Sub

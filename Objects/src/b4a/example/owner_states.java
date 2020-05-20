@@ -350,39 +350,39 @@ public b4a.example.outcome _outcome = null;
 public b4a.example.add_outcome _add_outcome = null;
 public b4a.example.family_card _family_card = null;
 public b4a.example.citizen _citizen = null;
-public b4a.example.lands_id _lands_id = null;
-public b4a.example.lands _lands = null;
 public b4a.example.land_by_owner _land_by_owner = null;
 public b4a.example.building_id _building_id = null;
 public b4a.example.building_owner _building_owner = null;
 public b4a.example.buildings _buildings = null;
 public b4a.example.owners _owners = null;
+public b4a.example.lands _lands = null;
+public b4a.example.lands_id _lands_id = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="owner_states";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=11599872;
- //BA.debugLineNum = 11599872;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=11599876;
- //BA.debugLineNum = 11599876;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11796480;
+ //BA.debugLineNum = 11796480;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=11796484;
+ //BA.debugLineNum = 11796484;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="owner_states";
-RDebugUtils.currentLine=11730944;
- //BA.debugLineNum = 11730944;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=11730946;
- //BA.debugLineNum = 11730946;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11927552;
+ //BA.debugLineNum = 11927552;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=11927554;
+ //BA.debugLineNum = 11927554;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="owner_states";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=11665408;
- //BA.debugLineNum = 11665408;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=11665410;
- //BA.debugLineNum = 11665410;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11862016;
+ //BA.debugLineNum = 11862016;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=11862018;
+ //BA.debugLineNum = 11862018;BA.debugLine="End Sub";
 return "";
 }
 }
